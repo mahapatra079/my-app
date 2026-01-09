@@ -12,5 +12,22 @@ code {
     monospace;
 }
 
-.mt-20{margin-top: 20px;}
-.container{padding: 30px;}
+.mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}
+.container{padding: 30px;}.d-block{display: block;}
+
+.concept{
+  margin-bottom: -40px;
+}
+.props{
+  border: 4px solid #000;
+  margin-top: 50px;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+}
+
+.child-data{
+  border: 2px solid red;
+  padding: 10px;
+  margin: 20px;
+}

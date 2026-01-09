@@ -1,8 +1,9 @@
 function ChildComponent ({name, age}){
     return(
-        <div className="mt-20">
-            Name : {name}           
-            Age  : {age}
+        <div className="child-data">
+            <h4 className="title">Child Component</h4>
+            <span> Name : {name}</span>      
+            <span className="d-block"> Age  : {age}</span>
         </div>
         
     )
