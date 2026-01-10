@@ -13,7 +13,7 @@ code {
 }
 
 .mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}
-.container{padding: 30px;display: flex; align-items:baseline;gap: 15px;}.d-block{display: block;}
+.container, .Container-2{padding: 30px;display: flex; align-items:baseline;gap: 15px;}.d-block{display: block;}
 
 .concept{
   margin-bottom: -40px;
@@ -38,3 +38,14 @@ code {
 }
 
 h2, h4{padding: 0;margin: 0;}
+
+.toggle {
+  margin-top: 15px;
+}
+.toggle button{
+  cursor: pointer;
+  width: 100%;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 16px;
+}

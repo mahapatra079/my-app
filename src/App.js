@@ -2,6 +2,7 @@ import {useState } from "react";
 import ChildComponent from "./ChildComponent";
 import Parent from "./Parent";
 import LifeCycle from "./Lifecycle";
+import State from "./State"
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -75,6 +76,14 @@ export default function App() {
                 </div>
             </div>  
         </div>
+        <div className="Container-2">
+          {/* State - Allow you to store data and modify the values */}
+          <div className="sate">
+            <h4>State Management</h4>
+             <State/>
+           </div>
+        </div>
+
     </>
   );
 }
