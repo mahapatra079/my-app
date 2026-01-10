@@ -13,6 +13,7 @@ export default function App() {
         <div className="container">
           {/* LifeCyclePhase */}
           <div>
+            <h4>LifeCycle Phase - Mount → Update → Unmount</h4>
             <button onClick={() => setShow(!show)} className="mt-20">
               Toggle Component
             </button>

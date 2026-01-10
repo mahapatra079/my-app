@@ -13,7 +13,7 @@ code {
 }
 
 .mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}
-.container{padding: 30px;}.d-block{display: block;}
+.container{padding: 30px;display: flex; align-items:baseline;gap: 15px;}.d-block{display: block;}
 
 .concept{
   margin-bottom: -40px;
@@ -22,7 +22,6 @@ code {
   border: 4px solid #000;
   margin-top: 50px;
   padding: 10px;
-  width: 25%;
   text-align: center;
 }
 
@@ -36,5 +35,6 @@ code {
    border: 3px solid grey;
    margin-top: 20px;
    padding: 10px;
-   width: 25%;
 }
+
+h2, h4{padding: 0;margin: 0;}
