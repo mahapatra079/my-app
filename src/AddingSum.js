@@ -33,13 +33,13 @@ function AddingSum (){
                    */}
                 </div>
                 <div>
-                    <label>Enter The First Number</label>
+                    <label>Enter The Second Number</label>
                     <input type="number" className="form-control" onChange={(e)=> setValue2(e.target.value)}/>
                 </div>
             </div>
               <button type="button" onClick={AddingSum} className="addBtn">Add</button>
              <div>
-                <label>Enter The First Number</label>
+                <label>Sum</label>
                 <input type="number" className="form-control" value={addValue} />
             </div>
         </div>
