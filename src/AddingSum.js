@@ -20,7 +20,17 @@ function AddingSum (){
                     <label>Enter The First Number</label>
                     <input type="number" className="form-control" onChange={(e)=> setValue1(e.target.value)}/>
                     {/* React passes event, not value. */}
-                    {/* onChange captures user input and updates component state using the event object. */}
+                    {/* 
+                         . onChange captures user input and updates component state using the event object
+                         . React event
+                         . Runs when users types in the input 
+                    
+                    */}
+                    {/* 
+                     . (e) => { ... } - arrow function, e = event oject, React automatically gives it 
+                     . e.target - The HTML element that triggered the event
+                     . e.target.value - current value inside the input
+                   */}
                 </div>
                 <div>
                     <label>Enter The First Number</label>
