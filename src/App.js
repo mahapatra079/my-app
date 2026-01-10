@@ -4,6 +4,7 @@ import Parent from "./Parent";
 import LifeCycle from "./Lifecycle";
 import State from "./State"
 import AddingSum from "./AddingSum";
+import ReversingString from "./ReversingString"
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -84,6 +85,7 @@ export default function App() {
              <State/>
            </div>
            <AddingSum/>
+           <ReversingString/>
         </div>
 
     </>
