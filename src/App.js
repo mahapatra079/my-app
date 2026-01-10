@@ -5,6 +5,7 @@ import LifeCycle from "./Lifecycle";
 import State from "./State"
 import AddingSum from "./AddingSum";
 import ReversingString from "./ReversingString"
+import CounterApplication from "./CounterApplication";
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -86,7 +87,9 @@ export default function App() {
            </div>
            <AddingSum/>
            <ReversingString/>
+           <CounterApplication/>
         </div>
+
 
     </>
   );
