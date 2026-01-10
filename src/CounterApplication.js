@@ -3,7 +3,14 @@
 import { useState } from "react";
 
 function CounterApplication() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
+    
+    // logic
+    const decrement = () => {
+        if (count >0) {
+            setCount(count-1)
+        }
+    }
 
   return (
     <div className="counter">
@@ -15,9 +22,20 @@ function CounterApplication() {
         Increment
       </button>
 
-      <button className="addBtn" onClick={() => setCount(count - 1)}>
+      {/* <button className="addBtn" onClick={() => setCount(count - 1)}>
         Decrement
-      </button>
+      </button> */}
+
+          <button className="addBtn" onClick={decrement}>
+        Decrement
+          </button>  
+          {/* if (count > 0)
+
+                count	decrement allowed
+                 5       	✅
+                 1   	    ✅
+                 0	     ❌ (stops)
+          */}
     </div>
   );
 }
