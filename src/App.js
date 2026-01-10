@@ -6,6 +6,7 @@ import State from "./State"
 import AddingSum from "./AddingSum";
 import ReversingString from "./ReversingString"
 import CounterApplication from "./CounterApplication";
+import CaptureInputData from "./CaptureInputData";
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -88,6 +89,7 @@ export default function App() {
            <AddingSum/>
            <ReversingString/>
            <CounterApplication/>
+           <CaptureInputData/>
         </div>
 
 
