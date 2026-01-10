@@ -31,3 +31,10 @@ code {
   padding: 10px;
   margin: 20px;
 }
+
+.props-drilling{
+   border: 3px solid grey;
+   margin-top: 20px;
+   padding: 10px;
+   width: 25%;
+}
