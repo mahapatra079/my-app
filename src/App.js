@@ -3,6 +3,7 @@ import ChildComponent from "./ChildComponent";
 import Parent from "./Parent";
 import LifeCycle from "./Lifecycle";
 import State from "./State"
+import AddingSum from "./AddingSum";
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -82,6 +83,7 @@ export default function App() {
             <h4>State Management</h4>
              <State/>
            </div>
+           <AddingSum/>
         </div>
 
     </>
