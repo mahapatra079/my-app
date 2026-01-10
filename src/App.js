@@ -7,6 +7,7 @@ import AddingSum from "./AddingSum";
 import ReversingString from "./ReversingString"
 import CounterApplication from "./CounterApplication";
 import CaptureInputData from "./CaptureInputData";
+import ToggleSwitch from "./ToggleSwitch";
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -91,7 +92,10 @@ export default function App() {
            <CounterApplication/>
            <CaptureInputData/>
         </div>
-
+        
+        <div className="container-3">
+          <ToggleSwitch/>
+        </div>
 
     </>
   );

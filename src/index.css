@@ -13,7 +13,7 @@ code {
 }
 
 .mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}.title{margin-bottom: 20px;}
-.container, .Container-2{padding: 30px;display: flex; align-items:baseline;gap: 15px;}.d-block{display: block;}
+.container, .Container-2, .container-3{padding: 30px;display: flex; align-items:baseline;gap: 15px;}.d-block{display: block;}
 
 .concept{
   margin-bottom: -40px;
@@ -49,5 +49,5 @@ h2, h4{padding: 0;margin: 0;}
   border-radius: 10px;
   font-size: 16px;
 }
-.adding-sum, .reversing-string, .counter, .capture-input{border: 2px solid blue;padding: 20px;}
+.adding-sum, .reversing-string, .counter, .capture-input, .show-hide{border: 2px solid blue;padding: 20px;}
 .addBtn{margin: 10px 0;}
