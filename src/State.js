@@ -8,7 +8,8 @@ function Toggle(){
 
     return(
         <div className="toggle">
-            <button onClick={()=> SetIsOn(!isOn)}>
+            <h4>Basic example of State</h4>
+            <button type="button" className="mt-10" onClick={()=> SetIsOn(!isOn)}>
                 {isOn ? "On" : "Off"}
             </button>
         </div>
