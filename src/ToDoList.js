@@ -19,7 +19,9 @@ function ToDoList() {
     // logic - removing
   const removeTask = (index) => {
     setList(list.filter((_, i) => i !== index));
-  };
+    };
+    // === checks both value and type (Strict equality)
+    // == performs type coercion before comparison.(Loose Equality)
 
   return (
     <div className="todo-list">
