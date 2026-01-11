@@ -8,6 +8,7 @@ import ReversingString from "./ReversingString"
 import CounterApplication from "./CounterApplication";
 import CaptureInputData from "./CaptureInputData";
 import ToggleSwitch from "./ToggleSwitch";
+import ToDoList from "./ToDoList";
 
 export default function App() {
   const [show, setShow] = useState(true);
@@ -94,7 +95,8 @@ export default function App() {
         </div>
         
         <div className="container-3">
-          <ToggleSwitch/>
+          <ToggleSwitch />
+          <ToDoList/>
         </div>
 
     </>

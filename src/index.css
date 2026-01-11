@@ -49,5 +49,5 @@ h2, h4{padding: 0;margin: 0;}
   border-radius: 10px;
   font-size: 16px;
 }
-.adding-sum, .reversing-string, .counter, .capture-input, .show-hide{border: 2px solid blue;padding: 20px;}
+.adding-sum, .reversing-string, .counter, .capture-input, .show-hide, .todo-list{border: 2px solid blue;padding: 20px;}
 .addBtn{margin: 10px 0;}
