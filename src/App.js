@@ -1,6 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-
-// import LifeCyclePage from "./LifeCyclePage";
+import LifeCyclePage from "./LifeCyclePage";
 import ChildComponent from "./ChildComponent";
 import Parent from "./Parent";
 import State from "./State";
@@ -10,7 +9,6 @@ import CounterApplication from "./CounterApplication";
 import CaptureInputData from "./CaptureInputData";
 import ToggleSwitch from "./ToggleSwitch";
 import ToDoList from "./ToDoList";
-import LifeCyclePage from "./LifeCyclePage";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
