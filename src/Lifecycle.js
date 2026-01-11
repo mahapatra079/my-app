@@ -20,7 +20,7 @@ function LifeCycle() {
 
   return (
     <>
-      <div>
+      <div className="mt-10">
         <p>Count: {count}</p>
         <button onClick={() => setCount(count + 1)}>
           Update
