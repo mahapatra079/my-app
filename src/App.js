@@ -9,6 +9,7 @@ import CounterApplication from "./CounterApplication";
 import CaptureInputData from "./CaptureInputData";
 import ToggleSwitch from "./ToggleSwitch";
 import ToDoList from "./ToDoList";
+import Reference from "./Reference";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
@@ -25,7 +26,8 @@ export default function App() {
         <Link to="/todo">Todo</Link> |{" "}
         <Link to="/sum">Add Sum</Link> |{" "}
         <Link to="/reverse">Reverse</Link> |{" "}
-        <Link to="/input">Live Input</Link>
+        <Link to="/input">Live Input</Link> |{" "}
+        <Link to="/reference">Reference</Link>
       </nav>
 
       <Routes>
@@ -45,6 +47,7 @@ export default function App() {
         <Route path="/sum" element={<AddingSum />} />
         <Route path="/reverse" element={<ReversingString />} />
         <Route path="/input" element={<CaptureInputData />} />
+        <Route path="/reference" element={<Reference />} />
       </Routes>
     </div>
   );
