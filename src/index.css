@@ -1,9 +1,9 @@
 body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
 
 h2, h4{padding: 0;margin: 0;}.title{margin-bottom: 20px;}.container{ width: 1160px; margin: 0 auto; max-width: 1160px; } 
-nav{ display: flex; justify-content: center; width: calc(100% - 90px); margin-top: 10px; gap: 10px; }
+nav{ display: flex; justify-content: center; width: calc(100% - 25px); margin-top: 10px; gap: 6px;}
 .d-block{display: block;}.mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}
 
 .concept{ margin-bottom: -40px; } .props{ border: 4px solid #000; margin-top: 50px; padding: 10px; text-align: center; } .child-data, .life-cycle{ border: 2px solid red; padding: 10px; margin: 20px; } .props-drilling{ border: 3px solid grey; margin-top: 20px; padding: 10px; } .toggle { margin-top: 15px; } .toggle button, .addBtn{ cursor: pointer; width: 100%; height: 36px; border-radius: 10px; font-size: 16px; }
-.adding-sum, .reversing-string, .counter, .capture-input, .show-hide, .todo-list, .toggle, .use-reference, .memoization{border: 2px solid blue;padding: 20px;margin-top: 20px;}
+.adding-sum, .reversing-string, .counter, .capture-input, .show-hide, .todo-list, .toggle, .use-reference, .memoization, .lazyLoading{border: 2px solid blue;padding: 20px;margin-top: 20px;}
 .addBtn{margin: 10px 0;}.textCenter{text-align: center;}
