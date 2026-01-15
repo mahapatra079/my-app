@@ -12,35 +12,46 @@ import ToDoList from "./ToDoList";
 import Reference from "./Reference";
 import Memoization from "./Memoization";
 import LazyLoading from "./LazyLoading";
+import Fetch from "./Fetch";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
 
   return (
     <div className="container">
-      <nav>
-        <Link to="/">Lifecycle</Link> |{" "}     {/*a single space in .... | → separator ...... {" "} → space after the pipe*/}
-        <Link to="/props">Props</Link> |{" "}
-        <Link to="/prop-drilling">Prop Drilling</Link> |{" "}
-        <Link to="/state">State</Link> |{" "}
-        <Link to="/toggle">Toggle</Link> |{" "}
-        <Link to="/counter">Counter</Link> |{" "}
-        <Link to="/todo">Todo</Link> |{" "}
-        <Link to="/sum">Add Sum</Link> |{" "}
-        <Link to="/reverse">Reverse</Link> |{" "}
-        <Link to="/input">Live Input</Link> |{" "}
-        <Link to="/reference">Reference</Link> |{""}
-        <Link to="/memoization">Memoization</Link> |{" "}
-        <Link to="/lazy-loading">Lazy Loading</Link>
-      </nav>
+      <div className="content">
+        <div className="nav-container">
+          <nav>
+            <Link to="/">Lifecycle</Link> |{" "}    {/*a single space in .... | → separator ...... {" "} → space after the pipe*/}
+            <Link to="/props">Props</Link> |{" "}
+            <Link to="/prop-drilling">Prop Drilling</Link> |{" "}
+            <Link to="/state">State</Link> |{" "}
+            <Link to="/toggle">Toggle</Link> |{" "}
+            <Link to="/counter">Counter</Link> |{" "}
+            <Link to="/todo">Todo</Link> |{" "}
+            <Link to="/sum">Add Sum</Link> |{" "}
+            <Link to="/reverse">Reverse</Link> |{" "}
+            <Link to="/input">Live Input</Link> |{" "}
+            <Link to="/reference">Reference</Link> |{" "}
+            <Link to="/memoization">Memoization</Link> |{" "}
+            <Link to="/lazy-loading">Lazy Loading</Link>
+          </nav>
+        </div>
+
+        <div className="nav-container nav-secondary">
+          <nav className="nav-2">
+            <Link to="/fetch">Fetch Data</Link>
+          </nav>
+        </div>
+      </div>
 
       <Routes>
         <Route path="/" element={<LifeCyclePage />} />
         
-        {/* Prop - Passing the data fronm Parent to Child Component */}
+        {/* Prop - Passing the data from Parent to Child Component */}
         <Route path="/props" element={<ChildComponent name="Amit" age={30} />} />
 
-         {/* Props Drilling - passing to data from parent to multiple child  */}
+        {/* Props Drilling - passing data from parent to multiple child */}
         <Route path="/prop-drilling" element={<Parent userName={userName} />} />
 
         {/* State - Allow you to store data and modify the values */}
@@ -54,6 +65,7 @@ export default function App() {
         <Route path="/reference" element={<Reference />} />
         <Route path="/memoization" element={<Memoization />} />
         <Route path="/lazy-loading" element={<LazyLoading />} />
+        <Route path="/fetch" element={<Fetch />} />
       </Routes>
     </div>
   );
