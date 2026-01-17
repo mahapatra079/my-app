@@ -16,6 +16,7 @@ import Fetch from "./Fetch";
 import Calculator from "./Calculator";
 import ClickEvent from "./ClickEvent";
 import TabSelection from "./TabSelection";
+import TablesListUSers from "./TablesListUsers";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
@@ -46,7 +47,8 @@ export default function App() {
             <Link to="/fetch">Fetch Data</Link>|{" "}
             <Link to="/calculator">Calculator</Link> |{" "}
             {/* <Link to="/click-event">Click Event</Link> */}
-            <Link to="/tabs">Tabs</Link>
+            <Link to="/tabs">Tabs</Link> |{" "}
+            <Link to="/tables-list-users">Users Table</Link>
           </nav>
         </div>
       </div>
@@ -75,6 +77,7 @@ export default function App() {
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/click-event" element={<ClickEvent />} />
         <Route path="/tabs" element={<TabSelection />} />
+        <Route path="/tables-list-users" element={<TablesListUSers />} />
       </Routes>
     </div>
   );
