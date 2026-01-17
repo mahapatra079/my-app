@@ -44,7 +44,7 @@ export default function App() {
           <nav className="nav-2">
             <Link to="/fetch">Fetch Data</Link>|{" "}
             <Link to="/calculator">Calculator</Link> |{" "}
-            <Link to="/click-event">Click Event</Link>
+            {/* <Link to="/click-event">Click Event</Link> */}
           </nav>
         </div>
       </div>
