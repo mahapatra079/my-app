@@ -14,6 +14,7 @@ import Memoization from "./Memoization";
 import LazyLoading from "./LazyLoading";
 import Fetch from "./Fetch";
 import Calculator from "./Calculator";
+import ClickEvent from "./ClickEvent";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
@@ -42,7 +43,8 @@ export default function App() {
         <div className="nav-container nav-secondary">
           <nav className="nav-2">
             <Link to="/fetch">Fetch Data</Link>|{" "}
-            <Link to="/calculator">Calculator</Link>
+            <Link to="/calculator">Calculator</Link> |{" "}
+            <Link to="/click-event">Click Event</Link>
           </nav>
         </div>
       </div>
@@ -69,6 +71,7 @@ export default function App() {
         <Route path="/lazy-loading" element={<LazyLoading />} />
         <Route path="/fetch" element={<Fetch />} />
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="/click-event" element={<ClickEvent />} />
       </Routes>
     </div>
   );
