@@ -15,6 +15,7 @@ import LazyLoading from "./LazyLoading";
 import Fetch from "./Fetch";
 import Calculator from "./Calculator";
 import ClickEvent from "./ClickEvent";
+import TabSelection from "./TabSelection";
 
 export default function App() {
   const userName = "Prop Drilling - PC → MC → GC";
@@ -45,6 +46,7 @@ export default function App() {
             <Link to="/fetch">Fetch Data</Link>|{" "}
             <Link to="/calculator">Calculator</Link> |{" "}
             {/* <Link to="/click-event">Click Event</Link> */}
+            <Link to="/tabs">Tabs</Link>
           </nav>
         </div>
       </div>
@@ -72,6 +74,7 @@ export default function App() {
         <Route path="/fetch" element={<Fetch />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/click-event" element={<ClickEvent />} />
+        <Route path="/tabs" element={<TabSelection />} />
       </Routes>
     </div>
   );
