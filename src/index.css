@@ -10,3 +10,8 @@ li{list-style: none;}
 .adding-sum, .reversing-string, .counter, .capture-input, .show-hide, .todo-list, .toggle, .use-reference, .memoization, .lazyLoading{border: 2px solid blue;padding: 20px;margin-top: 20px;}
 .addBtn{margin: 10px 0;}.textCenter{text-align: center;}
 
+/* calculator-styling */
+ .calculator { width: 260px; margin: 50px auto; padding: 20px; background: #1e1e1e; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); color: #fff; } .textCenter { text-align: center; } .mb-10 { margin-bottom: 10px; } .calculator-body { margin-top: 15px; }
+ .calculator-screen { width: 100%; height: 50px; background: #000; border: none; border-radius: 8px; color: #0f0; font-size: 22px; text-align: right; padding: 10px; box-sizing: border-box; }.calculator-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+ .calculator-keys button { height: 45px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; background: #333; color: #fff; transition: background 0.2s, transform 0.1s; } .calculator-keys button:hover { background: #444; } .calculator-keys button:active { transform: scale(0.95); }
+
