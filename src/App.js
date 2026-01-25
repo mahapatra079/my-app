@@ -8,7 +8,6 @@ import Child from "./components/props/Child";
 
 
 export default function App() {
-  const userName = "Prop Drilling - PC → MC → GC";
 
   return (
     <>
@@ -30,7 +29,7 @@ export default function App() {
           </nav>
         </div> */}
       </div>
-      
+
       <Routes>
         <Route path="/functional-component" element={<FunctionalComponent name="Good Morning" />} />
         <Route path="/class-component" element={<Welcome />} />
