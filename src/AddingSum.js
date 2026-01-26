@@ -14,7 +14,7 @@ function AddingSum (){
 
     return(
         <div className="adding-sum">
-            <h2>Adding Sum </h2>
+            <h2 className="textCenter">Adding Sum </h2>
             <div>
                 <div>
                     <label>Enter The First Number</label>

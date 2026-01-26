@@ -5,7 +5,7 @@ function Fragment() {
 
   return (
     <>
-      <h2>this is our fragments</h2>
+      <h2 className="textCenter">this is our fragments</h2>
       <p className="textCenter">hello jsx</p>
 
       <ul className="textCenter">

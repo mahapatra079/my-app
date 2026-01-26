@@ -10,7 +10,7 @@ class Welcome extends Component {
     // It returns JSX
     
     return (
-      <h2>Class Component Example</h2>
+      <h2 className="textCenter">Class Component Example</h2>
     );
   }
 }

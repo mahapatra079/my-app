@@ -42,7 +42,7 @@ function TablesListUsers() {
 
   return (
     <div className="table-container">
-      <h2>Users List</h2>
+      <h2 className="textCenter">Users List</h2>
 
       <div className="page-size">
         <label>Users per page: </label>

@@ -1,6 +1,6 @@
 
 function Greet({ name }) {    
-    return <h2>Hello World : {name} This is Functional Component Example</h2>
+    return <h2 className="textCenter">Hello World : {name} This is Functional Component Example</h2>
 }
 
 export default Greet;

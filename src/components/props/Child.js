@@ -4,7 +4,7 @@ function Child({header,title,subTitle}){
     console.log(header,title,subTitle)
     return (
         <>
-            <h4>{header} - data flow from {title} to {subTitle}</h4>
+            <h4 className="textCenter">{header} - data flow from {title} to {subTitle}</h4>
         </>
     )
 }
