@@ -15,7 +15,6 @@ import {
   Component, 
   Code, 
   FileText, 
-  Layers, 
   MousePointer, 
   Hash, 
   Phone, 
