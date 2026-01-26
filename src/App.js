@@ -56,22 +56,16 @@ export default function App() {
               <Link to="/jsx-version"><Code size={16} /> With JSX</Link>
               <Link to="/without-jsx"><FileText size={16} /> Without JSX</Link>
               <Link to="/fragment"><Code size={16} /> Fragment</Link>
-              <Link to="/props"><Hash size={16} /> Props</Link>
-
               <hr />
-              
+              <Link to="/props"><Hash size={16} /> Props</Link>              
               <Link to="/event-handling"><MousePointer size={16} /> Event Handling</Link>
               <Link to="/event-objects"><MousePointer size={16} /> Event Objects</Link>
               <Link to="/event-handler-props"><MousePointer size={16} /> Event Handler Props</Link>
               <Link to="/event-contact"><Phone size={16} /> Event Contact</Link>
-
               <hr />
-
               <Link to="/counter"><Calculator size={16} /> Counter</Link>
               <Link to="/state-counter"><Calculator size={16} /> State Counter</Link>
-
               <hr />
-
               <Link to="/advanced">Advanced Topics →</Link>
             </nav>
           </>
