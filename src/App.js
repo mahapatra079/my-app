@@ -111,6 +111,11 @@ export default function App() {
           <Route path="/state-counter" element={<StateCounter />} />
 
           {/* ADVANCED ROUTES */}
+          <Route path="/advanced" element={
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <Atom size={200} color="#61dafb" />
+            </div>
+          } />
           <Route path="/redux" element={<AddContacts />} />
         </Routes>
       </main>
