@@ -13,6 +13,7 @@ import EventHandlerProps from "./components/event-handling/EventHandlerProps";
 import { EventContact } from "./components/event-handling/EventContact";
 import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
+import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import AddContacts from "./components/redux/phone-book/add-contacts";
 
 import {
@@ -24,6 +25,7 @@ import {
   Phone,
   Calculator,
   Atom,
+  LifeBuoy,
 
 } from "lucide-react";
 
@@ -52,21 +54,23 @@ export default function App() {
             <nav className="nav">
               <Link to="/functional-component"><Component size={16} /> Functional Component</Link>
               <Link to="/class-component"><Component size={16} /> Class Component</Link>
-              <hr/>
+                <hr/>
               <Link to="/jsx-version"><Code size={16} /> With JSX</Link>
               <Link to="/without-jsx"><FileText size={16} /> Without JSX</Link>
               <Link to="/fragment"><Code size={16} /> Fragment</Link>
-              <hr />
+                <hr />
               <Link to="/props"><Hash size={16} /> Props</Link>              
               <Link to="/event-handling"><MousePointer size={16} /> Event Handling</Link>
               <Link to="/event-objects"><MousePointer size={16} /> Event Objects</Link>
               <Link to="/event-handler-props"><MousePointer size={16} /> Event Handler Props</Link>
               <Link to="/event-contact"><Phone size={16} /> Event Contact</Link>
-              <hr />
+                <hr />
               <Link to="/counter"><Calculator size={16} /> Counter</Link>
               <Link to="/state"><Calculator size={16} /> State</Link>
-              <hr />
+              <Link to="/life-cycle"><LifeBuoy size={16} /> Life Cycle</Link>
+                <hr />
               <Link to="/advanced">Advanced Topics →</Link>
+                
             </nav>
           </>
         )}
@@ -109,6 +113,9 @@ export default function App() {
           <Route path="/event-contact" element={<EventContact />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="/state" element={<StateCounter />} />
+          <Route path="/life-cycle" element={<LifeCycle />} />
+
+          
 
           {/* ADVANCED ROUTES */}
           <Route path="/advanced" element={
