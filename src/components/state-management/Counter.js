@@ -1,7 +1,7 @@
 
 export const Counter =()=>{
     let count = 0;
-    const handleCountter = ()=>{
+    const handleCounter = ()=>{
         count = count +1; 
         console.log(count);
     }
@@ -10,7 +10,7 @@ export const Counter =()=>{
             <div className="counter">
                 <h3>State Management - without State</h3>
                 <p>Counter</p>
-                <button type="button" className="addBtn" onClick={handleCountter}>Counter</button>
+                <button type="button" className="addBtn" onClick={handleCounter}>Counter</button>
             </div>
         </>
     )

@@ -64,7 +64,7 @@ export default function App() {
               <Link to="/event-contact"><Phone size={16} /> Event Contact</Link>
               <hr />
               <Link to="/counter"><Calculator size={16} /> Counter</Link>
-              <Link to="/state-counter"><Calculator size={16} /> State Counter</Link>
+              <Link to="/state"><Calculator size={16} /> State</Link>
               <hr />
               <Link to="/advanced">Advanced Topics →</Link>
             </nav>
@@ -108,7 +108,7 @@ export default function App() {
           <Route path="/event-handler-props" element={<EventHandlerProps text="Hit" />} />
           <Route path="/event-contact" element={<EventContact />} />
           <Route path="/counter" element={<Counter />} />
-          <Route path="/state-counter" element={<StateCounter />} />
+          <Route path="/state" element={<StateCounter />} />
 
           {/* ADVANCED ROUTES */}
           <Route path="/advanced" element={

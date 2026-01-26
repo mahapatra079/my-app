@@ -1,5 +1,8 @@
 
 import { useState } from 'react'
+import ToggleSwitch from './ToggleSwitch';
+import CaptureInputData from './CaptureInputData';
+
 export const StateCounter = () =>{
     // const [count, setCount] = useState(0);
     // currentValue, setterFunction = useState(initialValue)
@@ -21,11 +24,14 @@ export const StateCounter = () =>{
     }
     return(
         <>
+            <h2>State Management</h2>
             <div className="counter">
                 <h3>State Management - with state</h3>
                 <p>Counter: {count}</p>
                 <button type="button" className="addBtn" onClick={handleStateCounter}>Counter</button>
             </div>
+            <ToggleSwitch />
+            <CaptureInputData/>
         </>
     )
 }
