@@ -8,7 +8,7 @@ function CaptureInputData() {
     const [user2,setUser2] = useState("")
 
     return(
-        <div className="capture-input">
+        <div className="card">
             <h4>Capture Input Data (Real-Time)</h4>
             {/* Typing → onChange → setState → re-render → display text */}
                 <form>

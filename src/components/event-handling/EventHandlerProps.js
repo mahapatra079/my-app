@@ -5,8 +5,12 @@ function EventHandlerProps({text}){
     const handleClick = () => {
         console.log(`hey ${name}, is working with event handling  props ${text}`)
     }
-    return(
-        <button className="addBtn" onClick={handleClick}>{text}</button>
+    return (
+        <>
+            <div className="card">
+                <button className="addBtn" onClick={handleClick}>{text}</button>
+            </div>
+        </>    
     )
 }
 

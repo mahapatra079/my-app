@@ -6,8 +6,10 @@ export const EventContact = () =>{
     }
     return(
         <>  
-            <h3>Event Handlers as Props</h3>
-            <Button text="Contact Us" onClick={handleContact}/>
+            <div className="card">
+                 <h3>Event Handlers as Props</h3>
+                <Button text="Contact Us" onClick={handleContact} />
+            </div>
         </>
     )
 }

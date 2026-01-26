@@ -7,7 +7,7 @@ export const Counter =()=>{
     }
     return(
         <>
-            <div className="counter">
+            <div className="card">
                 <h3>State Management - without State</h3>
                 <p>Counter</p>
                 <button type="button" className="addBtn" onClick={handleCounter}>Counter</button>

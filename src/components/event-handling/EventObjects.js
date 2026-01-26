@@ -6,8 +6,10 @@ function EventObjects(){
     }
 
     return (
-        <>
-            <button onClick={handleClick} className="addBtn">Hit The Button</button>
+        <> 
+            <div className="card">
+                <button onClick={handleClick} className="addBtn">Hit The Button</button>
+             </div>   
         </>
     )
 }

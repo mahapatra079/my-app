@@ -29,7 +29,7 @@ export const LifeCycle = () => {
     }, []);  
 
     return( 
-        <div className="toggle">
+        <div className="card">
             <h1>Life Cycle Methods</h1>
             <span>count :{ count }</span>
             <button type="button" className="addBtn" onClick={handleCycle}>LifeCycle Features</button>

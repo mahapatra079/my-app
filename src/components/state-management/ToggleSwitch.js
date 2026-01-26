@@ -11,7 +11,7 @@ function ToggleSwitch() {
     }
 
     return (
-        <div className="show-hide">
+        <div className="card">
           <h4>Toggle Switch - show & Hide</h4>
             <div className="mt-10">
                 {show && <input type="text" className="form-control" placeholder="field" />}

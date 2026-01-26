@@ -15,6 +15,7 @@ import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
 import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import AddContacts from "./components/redux/phone-book/add-contacts";
+import { TaskManager } from "./components/hooks/TaskManager";
 
 import {
   Component,
@@ -34,7 +35,7 @@ export default function App() {
   const isAdvanced = location.pathname.startsWith("/advanced");
 
   const Logo = () => (
-    <h2 className="logo">
+    <h2 className="textCenter">
       <Atom size={40} />
     </h2>
   );
@@ -81,7 +82,8 @@ export default function App() {
             <Logo />
 
             <nav className="nav">
-              <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
+                <Link to="/advanced/hooks"><Code size={16} /> Hooks</Link>
+                <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
               <hr />
               <Link to="/functional-component">← Back to Basics</Link>
             </nav>
@@ -123,7 +125,8 @@ export default function App() {
               <Atom size={200} color="#61dafb" />
             </div>
           } />
-          <Route path="/advanced/redux" element={<AddContacts />} />
+            <Route path="/advanced/hooks" element={<TaskManager />} />
+            <Route path="/advanced/redux" element={<AddContacts />} />
         </Routes>
       </main>
 

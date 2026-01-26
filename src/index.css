@@ -3,13 +3,15 @@ body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'R
 h2, h4{padding: 0;margin: 0;}.title{margin-bottom: 20px;}.d-block{display: block;}.mt-10{margin-top: 10px;}.mt-20{margin-top: 20px;}.ml-10{margin-left: 10px;}.mb-10{margin-bottom: 10px;}.mb-20{margin-bottom: 20px;}.p-10{padding: 10px;}.p-20{padding: 20px;}.text-bold{font-weight: bold;}
 li{list-style: none;}.mr-5{margin-right: 5px;}
 
-.container{ width: 1160px; margin: 0 auto; max-width: 1160px; } 
-.content { display: flex; flex-direction: column; } .nav-container { padding: 10px 0; } .nav-container nav a { margin: 0 5px; text-decoration: none; color: #007bff; } .nav-container nav a:hover { text-decoration: underline; } .nav-secondary { border-top: 1px solid #ddd; margin-top: 10px; padding-top: 15px; } .nav-2 { display: block; }
-.app-layout { display: flex; height: 100vh; font-family: Arial, sans-serif; }.sidebar { width: 260px; background-color: #111827; color: #fff;display: flex;flex-direction: column;align-items: center; }.nav { display: flex; flex-direction: column; gap: 10px; } .nav a { color: #d1d5db; text-decoration: none; padding:6px; border-radius: 6px; transition: background 0.2s ease;display: flex;gap: 5px;align-items: center;} .nav a:hover { background-color: #1f2933; color: #fff; }
+.container{ width: 1160px; margin: 0 auto; max-width: 1160px; }.card{margin:12px; padding: 16px; background: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);} 
+.content { display: flex; flex-direction: column; }.form-control { width: fit-content; padding: 10px 14px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 14px; outline: none; transition: border-color 0.2s ease; } .form-control:focus { border-color: #2563eb; }
+
+.nav-container { padding: 10px 0; } .nav-container nav a { margin: 0 5px; text-decoration: none; color: #007bff; } .nav-container nav a:hover { text-decoration: underline; } .nav-secondary { border-top: 1px solid #ddd; margin-top: 10px; padding-top: 15px; } .nav-2 { display: block; }
+.app-layout { display: flex; height: 100vh; overflow: hidden;}.sidebar { min-width: 280px; max-width: 280px; background-color: #111827; color: #fff;display: flex;flex-direction: column;align-items: stretch; padding: 20px 15px; box-sizing: border-box; overflow-y: auto; flex-shrink: 0; } .nav a { color: #d1d5db; text-decoration: none; padding: 10px 12px; border-radius: 6px; transition: background 0.2s ease;display: flex;gap: 8px;align-items: center; font-size: 13px; line-height: 1.2; word-break: break-word; } .nav a:hover { background-color: #1f2933; color: #fff; }
  nav hr { border: none; border-top: 1px solid #374151; margin: 15px 0; }.main-content { flex: 1; padding: 30px; background-color: #f9fafb; overflow-y: auto; }
 .concept{ margin-bottom: -40px; } .props{ border: 4px solid #000; margin-top: 50px; padding: 10px; text-align: center; } .child-data, .life-cycle, .fetch{ border: 2px solid red; padding: 10px; margin: 10px; } .props-drilling{ border: 3px solid grey; margin-top: 20px; padding: 10px; } .toggle { margin-top: 15px; } .toggle button, .addBtn{ cursor: pointer; width: 100%; height: 36px; border-radius: 10px; font-size: 16px; }
+.addBtn{margin: 10px 0;}.textCenter{text-align: center;} 
 .adding-sum, .reversing-string, .counter, .capture-input, .show-hide, .todo-list, .toggle, .use-reference, .memoization, .lazyLoading, .click-event, .tab-selection{border: 2px solid blue;padding: 20px;margin-top: 20px;}
-.addBtn{margin: 10px 0;}.textCenter{text-align: center;}
 
 /* calculator-styling */
  .calculator { width: 260px; margin: 50px auto; padding: 20px; background: #1e1e1e; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); color: #fff; } .textCenter { text-align: center; } .mb-10 { margin-bottom: 10px; } .calculator-body { margin-top: 15px; }
@@ -17,7 +19,12 @@ li{list-style: none;}.mr-5{margin-right: 5px;}
  .calculator-keys button { height: 45px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; background: #333; color: #fff; transition: background 0.2s, transform 0.1s; } .calculator-keys button:hover { background: #444; } .calculator-keys button:active { transform: scale(0.95); }
 
 /* table */
-.table-container { width: 600px; margin: 20px auto; font-family: Arial, sans-serif; } .page-size { margin-bottom: 10px; text-align: right; } table { width: 100%; border-collapse: collapse; } th, td { border: 1px solid #ccc; padding: 8px; text-align: center; } th { background-color: #f4f4f4; }
+.table-container { width: 600px; margin: 20px auto; } .page-size { margin-bottom: 10px; text-align: right; } table { width: 100%; border-collapse: collapse; } th, td { border: 1px solid #ccc; padding: 8px; text-align: center; } th { background-color: #f4f4f4; }
 
 /*Pagination*/
 .pagination { display: flex; justify-content: center; gap: 10px; list-style: none; padding: 0; margin-top: 15px; } .page-item { padding: 6px 12px; border: 1px solid #ccc; cursor: pointer; user-select: none; } .page-item:hover { background-color: #f0f0f0; } .page-item.active { background-color: #007bff; color: white; cursor: default; } .page-item.disabled { opacity: 0.5; cursor: not-allowed; }
+
+/*Task-Manager*/
+
+  .task-manager h2 { text-align: center; font-weight: 600; color: #111827; } .task-manager p { margin-top: 16px; font-size: 14px; color: #374151; font-weight: 500; }
+ .task-manager ul { list-style: none; padding: 0; margin-top: 12px; } .task-manager li { padding: 10px 12px; margin-bottom: 8px; background: #f9fafb; border-radius: 8px; cursor: pointer; font-size: 14px; color: #111827; display: flex; align-items: center; transition: background 0.2s ease; } .task-manager li:hover { background: #e5e7eb; }

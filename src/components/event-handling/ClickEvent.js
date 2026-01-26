@@ -11,9 +11,10 @@ function ClickEvent(){
 
   return(
     <>
-       <h3>Click Event</h3>
-       <button type="button" className="addBtn" onClick={handleClick}>This is Event Handling</button>
-
+      <div className="card">
+        <h3>Click Event</h3>
+        <button type="button" className="addBtn" onClick={handleClick}>This is Event Handling</button>
+      </div>
     </>
   )
 }
