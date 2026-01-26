@@ -1,4 +1,6 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './store';
 import FunctionalComponent from "./components/function-class/Greet";
 import Welcome from "./components/function-class/Welcome";
 import WithJsx from "./components/jsx/WithJsx";
@@ -11,6 +13,7 @@ import EventHandlerProps from "./components/event-handling/EventHandlerProps";
 import { EventContact } from "./components/event-handling/EventContact";
 import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
+import AddContacts from "./components/redux/phone-book/add-contacts";
 
 import {
   Component,
@@ -21,8 +24,7 @@ import {
   Phone,
   Calculator,
   Atom,
-  Layers,
-  GitBranch
+
 } from "lucide-react";
 
 export default function App() {
@@ -36,7 +38,8 @@ export default function App() {
   );
 
   return (
-    <div className="app-layout">
+    <Provider store={store}>
+      <div className="app-layout">
 
       {/* SIDEBAR */}
       <aside className="sidebar">
@@ -80,12 +83,8 @@ export default function App() {
             <Logo />
 
             <nav className="nav">
-              <Link to="/advanced/hooks"><Code size={16} /> Hooks</Link>
-              <Link to="/advanced/context"><Layers size={16} /> Context API</Link>
-              <Link to="/advanced/routing"><GitBranch size={16} /> Routing</Link>
-
+              <Link to="/redux"><Code size={16} /> Redux</Link>
               <hr />
-
               <Link to="/functional-component">← Back to Basics</Link>
             </nav>
           </>
@@ -96,6 +95,13 @@ export default function App() {
       {/* MAIN CONTENT */}
       <main className="main-content">
         <Routes>
+          {/* DEFAULT HOME ROUTE */}
+          <Route path="/" element={
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <Atom size={200} color="#61dafb" />
+            </div>
+          } />
+          
           {/* BASIC ROUTES */}
           <Route path="/functional-component" element={<FunctionalComponent name="Good Morning" />} />
           <Route path="/class-component" element={<Welcome />} />
@@ -111,13 +117,11 @@ export default function App() {
           <Route path="/state-counter" element={<StateCounter />} />
 
           {/* ADVANCED ROUTES */}
-          <Route path="/advanced" element={<h2>Select an Advanced Topic</h2>} />
-          <Route path="/advanced/hooks" element={<h2>Advanced Hooks</h2>} />
-          <Route path="/advanced/context" element={<h2>Context API Deep Dive</h2>} />
-          <Route path="/advanced/routing" element={<h2>Advanced Routing</h2>} />
+          <Route path="/redux" element={<AddContacts />} />
         </Routes>
       </main>
 
-    </div>
+      </div>
+    </Provider>
   );
 }
