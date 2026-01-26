@@ -77,7 +77,7 @@ export default function App() {
             <Logo />
 
             <nav className="nav">
-              <Link to="/redux"><Code size={16} /> Redux</Link>
+              <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
               <hr />
               <Link to="/functional-component">← Back to Basics</Link>
             </nav>
@@ -116,7 +116,7 @@ export default function App() {
               <Atom size={200} color="#61dafb" />
             </div>
           } />
-          <Route path="/redux" element={<AddContacts />} />
+          <Route path="/advanced/redux" element={<AddContacts />} />
         </Routes>
       </main>
 
