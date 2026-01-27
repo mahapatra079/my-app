@@ -24,8 +24,8 @@ function ToDoList() {
     // == performs type coercion before comparison.(Loose Equality)
 
   return (
-    <div className="todo-list">
-      <h4>ToDo List</h4>
+    <div className=" card todo-list">
+      <h4 className="mb-10">ToDo List</h4>
 
       <input
         type="text"

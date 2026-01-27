@@ -1,4 +1,5 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import { Provider } from 'react-redux';
 import store from './store';
 import FunctionalComponent from "./components/function-class/Greet";
@@ -15,7 +16,18 @@ import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
 import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import AddContacts from "./components/redux/phone-book/add-contacts";
-import { TaskManager } from "./components/hooks/TaskManager";
+import { TaskManager } from "./components/hooks/features/TaskManager";
+import UseStateExample from "./components/hooks/UseStateExample";
+import UseRefExample from "./components/hooks/UseRefExample";
+import UseEffectExample from "./components/hooks/UseEffectExample";
+import UseMemoExample from "./components/hooks/UseMemoExample";
+import UseCallbackExample from "./components/hooks/UseCallbackExample";
+import UseLayoutEffectExample from "./components/hooks/UseLayoutEffectExample";
+import UseReducerExample from "./components/hooks/UseReducerExample";
+import Calculator from "./components/state-management/features/Calculator";
+import ToDoList from "./components/state-management/features/ToDoList";
+import TabSelection from "./components/state-management/features/TabSelection";
+import TablesListUsers from "./components/state-management/features/TablesListUsers";
 
 import {
   Component,
@@ -24,15 +36,18 @@ import {
   MousePointer,
   Hash,
   Phone,
-  Calculator,
+  Calculator as CalcIcon,
   Atom,
   LifeBuoy,
-
+  ChevronDown,
+  ChevronRight
 } from "lucide-react";
 
 export default function App() {
   const location = useLocation();
-  const isAdvanced = location.pathname.startsWith("/advanced");
+  const isAdvanced = location.pathname.startsWith("/advanced") || location.pathname.startsWith("/hooks");
+  const [hooksOpen, setHooksOpen] = useState(false);
+  const [stateOpen, setStateOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -66,8 +81,28 @@ export default function App() {
               <Link to="/event-handler-props"><MousePointer size={16} /> Event Handler Props</Link>
               <Link to="/event-contact"><Phone size={16} /> Event Contact</Link>
                 <hr />
-              <Link to="/counter"><Calculator size={16} /> Counter</Link>
-              <Link to="/state"><Calculator size={16} /> State</Link>
+              <Link to="/counter"><CalcIcon size={16} /> Counter</Link>
+              
+              <div className="state-management">
+                <button 
+                  onClick={() => setStateOpen(!stateOpen)}
+                  className="dropdown-btn"
+                >
+                  {stateOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                  <CalcIcon size={16} /> State Management
+                </button>
+                
+                {stateOpen && (
+                  <div style={{ marginLeft: '20px', marginTop: '5px' }}>
+                    <Link to="/state"><Hash size={14} /> State Counter</Link>
+                    <Link to="/state/calculator"><Hash size={14} /> Calculator</Link>
+                    <Link to="/state/todo"><Hash size={14} /> ToDo List</Link>
+                    <Link to="/state/tabs"><Hash size={14} /> Tab Selection</Link>
+                    <Link to="/state/users"><Hash size={14} /> Users Table</Link>
+                  </div>
+                )}
+              </div>
+              
               <Link to="/life-cycle"><LifeBuoy size={16} /> Life Cycle</Link>
                 <hr />
               <Link to="/advanced">Advanced Topics →</Link>
@@ -82,8 +117,29 @@ export default function App() {
             <Logo />
 
             <nav className="nav">
-                <Link to="/advanced/hooks"><Code size={16} /> Hooks</Link>
-                <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
+              <div className="hooks-categories">
+                <button 
+                  onClick={() => setHooksOpen(!hooksOpen)}
+                  className="dropdown-btn"
+                >
+                  {hooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                  <Code size={16} /> Hooks
+                </button>
+                
+                {hooksOpen && (
+                  <div style={{ marginLeft: '20px', marginTop: '5px' }}>
+                    <Link to="/advanced/hooks/useState"><Hash size={14} /> useState</Link>
+                    <Link to="/advanced/hooks/useRef"><Hash size={14} /> useRef</Link>
+                    <Link to="/advanced/hooks/useEffect"><Hash size={14} /> useEffect</Link>
+                    <Link to="/advanced/hooks/useMemo"><Hash size={14} /> useMemo</Link>
+                    <Link to="/advanced/hooks/useCallback"><Hash size={14} /> useCallback</Link>
+                    <Link to="/advanced/hooks/useLayoutEffect"><Hash size={14} /> useLayoutEffect</Link>
+                    <Link to="/advanced/hooks/useReducer"><Hash size={14} /> useReducer</Link>
+                    <Link to="/advanced/hooks"><Hash size={14} /> Task Manager</Link>
+                  </div>
+                )}
+              </div>
+              <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
               <hr />
               <Link to="/functional-component">← Back to Basics</Link>
             </nav>
@@ -114,8 +170,23 @@ export default function App() {
           <Route path="/event-handler-props" element={<EventHandlerProps text="Hit" />} />
           <Route path="/event-contact" element={<EventContact />} />
           <Route path="/counter" element={<Counter />} />
+          {/* STATE MANAGEMENT ROUTES */}
           <Route path="/state" element={<StateCounter />} />
+          <Route path="/state/calculator" element={<Calculator />} />
+          <Route path="/state/todo" element={<ToDoList />} />
+          <Route path="/state/tabs" element={<TabSelection />} />
+          <Route path="/state/users" element={<TablesListUsers />} />
+          
           <Route path="/life-cycle" element={<LifeCycle />} />
+
+          {/* HOOKS ROUTES */}
+          <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
+          <Route path="/advanced/hooks/useRef" element={<UseRefExample />} />
+          <Route path="/advanced/hooks/useEffect" element={<UseEffectExample />} />
+          <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
+          <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
+          <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
+          <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
 
           
 

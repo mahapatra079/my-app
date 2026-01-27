@@ -6,12 +6,12 @@ function Tabs() {
   const [activeTab, setActiveTab] = useState("home");
 
   return (
-    <div className="tab-selection" style={{ width: "300px", margin: "20px auto" }}>
+    <div className="card tab-selection" style={{ width: "300px", margin: "20px auto" }}>
       {/* Tab Buttons */}
       <div style={{ display: "flex", gap: "10px" }}>
-        <button onClick={() => setActiveTab("home")}>Home</button>
-        <button onClick={() => setActiveTab("profile")}>Profile</button>
-        <button onClick={() => setActiveTab("settings")}>Settings</button>
+        <button className="addBtn" onClick={() => setActiveTab("home")}>Home</button>
+        <button className="addBtn" onClick={() => setActiveTab("profile")}>Profile</button>
+        <button className="addBtn" onClick={() => setActiveTab("settings")}>Settings</button>
       </div>
 
       {/* Tab Content */}

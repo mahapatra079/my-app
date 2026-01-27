@@ -35,7 +35,7 @@ function Reference() {
   const countRef = useRef(0);
 
   return (
-      <div className="use-reference">
+      <div className="card">
         <h4>Simple Example: Store Value (No re-render)</h4>
             <button type="button" className="addBtn" onClick={() => {
                 countRef.current += 1;

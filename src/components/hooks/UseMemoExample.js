@@ -21,7 +21,7 @@ export default function Parent() {
   }, []);
 
   return (
-      <div className="memoization">
+      <div className="card">
         <p className="textCenter">Memoization Example</p>
          <h2 className="textCenter">Count: {count}</h2>
 
