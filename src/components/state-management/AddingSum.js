@@ -13,12 +13,12 @@ function AddingSum (){
     }
 
     return(
-        <div className="adding-sum">
-            <h2 className="textCenter">Adding Sum </h2>
+        <div className="card">
+            <h2 className="textCenter mb-10">Adding Sum </h2>
             <div>
                 <div>
                     <label>Enter The First Number</label>
-                    <input type="number" className="form-control" onChange={(e)=> setValue1(e.target.value)}/>
+                    <input type="number" className="form-control ml-10 mb-10" onChange={(e)=> setValue1(e.target.value) }/>
                     {/* React passes event, not value. */}
                     {/* 
                          . onChange captures user input and updates component state using the event object
@@ -34,13 +34,13 @@ function AddingSum (){
                 </div>
                 <div>
                     <label>Enter The Second Number</label>
-                    <input type="number" className="form-control" onChange={(e)=> setValue2(e.target.value)}/>
+                    <input type="number" className="form-control ml-10 mb-10" onChange={(e)=> setValue2(e.target.value)} />
                 </div>
             </div>
               <button type="button" onClick={AddingSum} className="addBtn">Add</button>
              <div>
                 <label>Sum</label>
-                <input type="number" className="form-control" value={addValue} />
+                <input type="number" className="form-control ml-10 mb-10" value={addValue} />
             </div>
         </div>
     )

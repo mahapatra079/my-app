@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import ToggleSwitch from './ToggleSwitch';
 import CaptureInputData from './CaptureInputData';
+import AddingSum from './AddingSum';
 
 export const StateCounter = () =>{
     // const [count, setCount] = useState(0);
@@ -31,7 +32,8 @@ export const StateCounter = () =>{
                 <button type="button" className="addBtn" onClick={handleStateCounter}>Counter</button>
             </div>
             <ToggleSwitch />
-            <CaptureInputData/>
+            <CaptureInputData />
+            <AddingSum/>
         </>
     )
 }
