@@ -94,7 +94,7 @@ export default function App() {
                 
                 {stateOpen && (
                   <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-                    <Link to="/state"><Hash size={14} /> State Counter</Link>
+                    <Link to="/state"><Hash size={14} /> State Examples</Link>
                     <Link to="/state/calculator"><Hash size={14} /> Calculator</Link>
                     <Link to="/state/todo"><Hash size={14} /> ToDo List</Link>
                     <Link to="/state/tabs"><Hash size={14} /> Tab Selection</Link>
