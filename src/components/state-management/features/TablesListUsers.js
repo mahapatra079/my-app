@@ -13,7 +13,7 @@
 // Provide an option to select the number of users displayed per page (e.g., 5, 10, 20)
 
 import { useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "../../common-component/Pagination";
 
 const usersData = [
   { id: 1, name: "Amit", age: 25, occupation: "Developer" },
