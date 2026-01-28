@@ -20,6 +20,14 @@ const reducer = (state, action) => {
 const UseReducerExample = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  //   const [state, dispatch] = useReducer(reducer, initialState);
+  
+      // state → current state
+
+      // dispatch → function to trigger state change
+
+      // reducer → pure function that decides how state updates
+
   return (
     <div className="card">
       <h2>useReducer Hook Example</h2>
@@ -62,3 +70,17 @@ const UseReducerExample = () => {
 };
 
 export default UseReducerExample;
+
+// A better alternative to useState when state logic gets complex
+
+// Similar to Redux, but local to a component
+
+// Reducer must be pure
+
+// No API calls
+
+// No side effects
+
+// Just return new state
+
+// useReducer is used to manage complex state logic in React components, similar to Redux but at a component level.
