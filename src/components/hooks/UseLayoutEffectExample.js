@@ -1,6 +1,7 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { UseLayoutEffectWidth } from './UseLayoutEffectWidth';
 
-const UseLayoutEffectExample = () => {
+export const UseLayoutEffectExample = () => {
   const [count, setCount] = useState(0);
   const divRef = useRef();
 
@@ -18,33 +19,35 @@ const UseLayoutEffectExample = () => {
   }, [count]);
 
   return (
-    <div className="card">
-      <h2 className='mb-10'>useLayoutEffect Hook Example</h2>
-      
-      <div 
-        ref={divRef}
-        style={{ 
-          padding: '20px', 
-          border: '2px solid #ccc', 
-          borderRadius: '8px',
-          transition: 'background-color 0.3s ease'
-        }}
-      >
-        <h3>Count: {count}</h3>
-        <p>Background changes synchronously with useLayoutEffect</p>
+    <>
+      <UseLayoutEffectWidth/>
+      <div className="card">
+        <h2 className='mb-10'>useLayoutEffect Hook Example</h2>
         
-        <button onClick={() => setCount(count + 1)} className="addBtn">
-          Increment
-        </button>
-        
-        <button onClick={() => setCount(0)} className="addBtn">
-          Reset
-        </button>
-        
-        <p>Check console to see the execution order</p>
-      </div>
-    </div>
+        <div 
+          ref={divRef}
+          style={{ 
+            padding: '20px', 
+            border: '2px solid #ccc', 
+            borderRadius: '8px',
+            transition: 'background-color 0.3s ease'
+          }}
+        >
+          <h3>Count: {count}</h3>
+          <p>Background changes synchronously with useLayoutEffect</p>
+          
+          <button onClick={() => setCount(count + 1)} className="addBtn">
+            Increment
+          </button>
+          
+          <button onClick={() => setCount(0)} className="addBtn">
+            Reset
+          </button>
+          
+          <p>Check console to see the execution order</p>
+        </div>
+        </div>
+      </>
   );
 };
 
-export default UseLayoutEffectExample;

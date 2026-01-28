@@ -22,26 +22,14 @@ import UseRefExample from "./components/hooks/UseRefExample";
 import UseEffectExample from "./components/hooks/UseEffectExample";
 import UseMemoExample from "./components/hooks/UseMemoExample";
 import UseCallbackExample from "./components/hooks/UseCallbackExample";
-import UseLayoutEffectExample from "./components/hooks/UseLayoutEffectExample";
+import {UseLayoutEffectExample} from "./components/hooks/UseLayoutEffectExample";
 import UseReducerExample from "./components/hooks/UseReducerExample";
 import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 
-import {
-  Component,
-  Code,
-  FileText,
-  MousePointer,
-  Hash,
-  Phone,
-  Calculator as CalcIcon,
-  Atom,
-  LifeBuoy,
-  ChevronDown,
-  ChevronRight
-} from "lucide-react";
+import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function App() {
   const location = useLocation();
