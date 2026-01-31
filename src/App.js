@@ -24,6 +24,7 @@ import UseMemoExample from "./components/hooks/UseMemoExample";
 import UseCallbackExample from "./components/hooks/UseCallbackExample";
 import {UseLayoutEffectExample} from "./components/hooks/UseLayoutEffectExample";
 import UseReducerExample from "./components/hooks/UseReducerExample";
+import UseContextExample from "./components/hooks/UseContextExample";
 import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
@@ -123,6 +124,7 @@ export default function App() {
                     <Link to="/advanced/hooks/useCallback"><Hash size={14} /> useCallback</Link>
                     <Link to="/advanced/hooks/useLayoutEffect"><Hash size={14} /> useLayoutEffect</Link>
                     <Link to="/advanced/hooks/useReducer"><Hash size={14} /> useReducer</Link>
+                    <Link to="/advanced/hooks/useContext"><Hash size={14} /> useContext</Link>
                     <Link to="/advanced/hooks"><Hash size={14} /> Task Manager</Link>
                   </div>
                 )}
@@ -175,6 +177,7 @@ export default function App() {
           <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
           <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
           <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
+          <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
 
           
 
