@@ -30,6 +30,7 @@ import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 
+
 import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
   const isAdvanced = location.pathname.startsWith("/advanced") || location.pathname.startsWith("/hooks");
   const [hooksOpen, setHooksOpen] = useState(false);
   const [stateOpen, setStateOpen] = useState(false);
+  const [reduxOpen, setReduxOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -129,7 +131,24 @@ export default function App() {
                   </div>
                 )}
               </div>
-              <Link to="/advanced/redux"><Code size={16} /> Redux</Link>
+              
+              <div className="redux-categories">
+                <button 
+                  onClick={() => setReduxOpen(!reduxOpen)}
+                  className="dropdown-btn"
+                >
+                  {reduxOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                  <Code size={16} /> Redux
+                </button>
+                
+                {reduxOpen && (
+                  <div style={{ marginLeft: '20px', marginTop: '5px' }}>
+                    <Link to="/advanced/redux"><Hash size={14} /> Phone Book</Link>
+                   
+                  </div>
+                )}
+              </div>
+              
               <hr />
               <Link to="/functional-component">← Back to Basics</Link>
             </nav>
@@ -179,6 +198,8 @@ export default function App() {
           <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
           <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
 
+          {/* REDUX ROUTES */}
+          <Route path="/advanced/redux" element={<AddContacts />} />
           
 
           {/* ADVANCED ROUTES */}
@@ -187,8 +208,7 @@ export default function App() {
               <Atom size={200} color="#61dafb" />
             </div>
           } />
-            <Route path="/advanced/hooks" element={<TaskManager />} />
-            <Route path="/advanced/redux" element={<AddContacts />} />
+          <Route path="/advanced/hooks" element={<TaskManager />} />
         </Routes>
       </main>
 

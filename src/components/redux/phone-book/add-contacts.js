@@ -8,7 +8,7 @@ const AddContacts = () => {
 let dispatch = useDispatch();
 
  return (
-    <div>
+    <div className="card">
     <div>
         <div>
             Name: <input type="text" id="name" />
@@ -20,7 +20,7 @@ let dispatch = useDispatch();
             Address: <input type="text" id="address" />
         </div>
         <div>
-            <button onClick={() => {
+            <button className="addBtn" onClick={() => {
                 let name = document.getElementById("name")?.value;
                 let contactNo = document.getElementById("contact-no")?.value;
                 let address = document.getElementById("address")?.value;
