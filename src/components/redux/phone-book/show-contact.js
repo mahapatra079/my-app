@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const ShowContacts = () => {
-    const allContacts = useSelector(state => state);
+    const allContacts = useSelector(state => state.allContacts);
  return (
     <div>
         {allContacts.contactList.map((contact, index) => {
