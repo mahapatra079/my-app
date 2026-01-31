@@ -29,9 +29,8 @@ import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
-
-
 import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight } from "lucide-react";
+import ReduxCounter from "./components/redux/features/counterSlice";
 
 export default function App() {
   const location = useLocation();
@@ -144,7 +143,7 @@ export default function App() {
                 {reduxOpen && (
                   <div style={{ marginLeft: '20px', marginTop: '5px' }}>
                     <Link to="/advanced/redux"><Hash size={14} /> Phone Book</Link>
-                   
+                    <Link to="/advanced/redux/counter"><Hash size={14} /> Counter</Link>
                   </div>
                 )}
               </div>
@@ -199,7 +198,8 @@ export default function App() {
           <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
 
           {/* REDUX ROUTES */}
-          <Route path="/advanced/redux" element={<AddContacts />} />
+            <Route path="/advanced/redux" element={<AddContacts />} />
+            <Route path="/advanced/redux/counter" element={<ReduxCounter />} />
           
 
           {/* ADVANCED ROUTES */}
