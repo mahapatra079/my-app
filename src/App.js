@@ -31,6 +31,7 @@ import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
+import ApiTable from "./components/ApiTable";
 import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight } from "lucide-react";
 import ReduxCounter from "./components/redux/features/counterSlice";
 
@@ -97,6 +98,7 @@ export default function App() {
               </div>
               
               <Link to="/life-cycle"><LifeBuoy size={16} /> Life Cycle</Link>
+              <Link to="/api-table"><Hash size={16} /> API Table</Link>
               
               <div className="forms-dropdown">
                 <button 
@@ -206,6 +208,7 @@ export default function App() {
           <Route path="/state/users" element={<TablesListUsers />} />
           
           <Route path="/life-cycle" element={<LifeCycle />} />
+          <Route path="/api-table" element={<ApiTable />} />
           <Route path="/controlled" element={<ControlledComponent />} />
           <Route path="/uncontrolled" element={<UncontrolledComponent />} />
 
