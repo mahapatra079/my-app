@@ -29,6 +29,8 @@ import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
+import ControlledComponent from "./components/forms/ControlledComponent";
+import UncontrolledComponent from "./components/forms/UncontrolledComponent";
 import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight } from "lucide-react";
 import ReduxCounter from "./components/redux/features/counterSlice";
 
@@ -38,6 +40,7 @@ export default function App() {
   const [hooksOpen, setHooksOpen] = useState(false);
   const [stateOpen, setStateOpen] = useState(false);
   const [reduxOpen, setReduxOpen] = useState(false);
+  const [formsOpen, setFormsOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -94,6 +97,23 @@ export default function App() {
               </div>
               
               <Link to="/life-cycle"><LifeBuoy size={16} /> Life Cycle</Link>
+              
+              <div className="forms-dropdown">
+                <button 
+                  onClick={() => setFormsOpen(!formsOpen)}
+                  className="dropdown-btn"
+                >
+                  {formsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                  <FileText size={16} /> Forms
+                </button>
+                
+                {formsOpen && (
+                  <div style={{ marginLeft: '20px', marginTop: '5px' }}>
+                    <Link to="/controlled"><Hash size={14} /> Controlled</Link>
+                    <Link to="/uncontrolled"><Hash size={14} /> Uncontrolled</Link>
+                  </div>
+                )}
+              </div>
                 <hr />
               <Link to="/advanced">Advanced Topics →</Link>
                 
@@ -186,6 +206,8 @@ export default function App() {
           <Route path="/state/users" element={<TablesListUsers />} />
           
           <Route path="/life-cycle" element={<LifeCycle />} />
+          <Route path="/controlled" element={<ControlledComponent />} />
+          <Route path="/uncontrolled" element={<UncontrolledComponent />} />
 
           {/* HOOKS ROUTES */}
           <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
