@@ -31,7 +31,7 @@ import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
-import ApiTable from "./components/ApiTable";
+import ApiTable from "./components/api/ApiTable";
 import {
   Component,
   Code,
@@ -46,9 +46,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import ReduxCounter from "./components/redux/features/counterSlice";
-import Fetch from "./components/api/Fetch";
 import ListProductsFilter from "./components/api/ListProductsFilter";
-import TabularListAPI from "./components/api/TabularListAPI";
 
 export default function App() {
   const location = useLocation();
@@ -249,14 +247,8 @@ export default function App() {
 
                   {apiOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
-                      <Link to="/advanced/api/fetch">
-                        <Hash size={14} /> Fetch
-                      </Link>
                       <Link to="/advanced/api/list-products">
                         <Hash size={14} /> ListProductsFilter
-                      </Link>
-                      <Link to="/advanced/api/tabular-list">
-                        <Hash size={14} /> TabularListAPI
                       </Link>
                       <Link to="/advanced/api/comments">
                         <Hash size={14} /> ApiTable
@@ -386,14 +378,9 @@ export default function App() {
             />
 
             {/* API ROUTES */}
-            <Route path="/advanced/api/fetch" element={<Fetch />} />
             <Route
               path="/advanced/api/list-products"
               element={<ListProductsFilter />}
-            />
-            <Route
-              path="/advanced/api/tabular-list"
-              element={<TabularListAPI />}
             />
             <Route path="/advanced/api/comments" element={<ApiTable />} />
 
