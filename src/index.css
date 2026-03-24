@@ -28,4 +28,4 @@ li{list-style: none;}.mr-5{margin-right: 5px;}
  .task-manager ul { list-style: none; padding: 0; margin-top: 12px; } .task-manager li { padding: 10px 12px; margin-bottom: 8px; background: #f9fafb; border-radius: 8px; cursor: pointer; font-size: 14px; color: #111827; display: flex; align-items: center; transition: background 0.2s ease; } .task-manager li:hover { background: #e5e7eb; }
 
  /*Form-Validation*/
- .forms-card {display: flex;flex-direction: column;justify-content: center;}.forms-card label { font-weight: 500; color: #111827; } .forms-card input { margin-left: 10px; } .forms-card span{ font-size: 12px; margin-left: 10px;font-weight: 600;}
+ .forms-card {display: flex;flex-direction: column;justify-content: center;gap: 10px;}.forms-card label { font-weight: 500; color: #111827;margin-right: 10px; } .forms-card input {width: 50%; } .forms-card span{ font-size: 12px; margin-left: 10px;font-weight: 600;}

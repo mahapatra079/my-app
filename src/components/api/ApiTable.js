@@ -16,26 +16,28 @@ function ApiTable() {
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <td>Name</td>
-          <td>Status</td>
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user) => (
-          <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>
-              <button onClick={handleStatus}>
-                {online ? "Online" : "Offline"} 
-              </button>
-            </td>
+    <div className="card">
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr>
+            <td style={{ border: '1px solid #ddd', padding: '8px 12px', backgroundColor: '#f4f4f4', fontWeight: '600' }}>Name</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px 12px', backgroundColor: '#f4f4f4', fontWeight: '600' }}>Status</td>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td style={{ border: '1px solid #ddd', padding: '8px 12px' }}>{user.name}</td>
+              <td style={{ border: '1px solid #ddd', padding: '8px 12px' }}>
+                <button onClick={handleStatus}>
+                  {online ? "Online" : "Offline"} 
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

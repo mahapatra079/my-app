@@ -25,12 +25,14 @@ import UseCallbackExample from "./components/hooks/UseCallbackExample";
 import { UseLayoutEffectExample } from "./components/hooks/UseLayoutEffectExample";
 import UseReducerExample from "./components/hooks/UseReducerExample";
 import UseContextExample from "./components/hooks/UseContextExample";
+import CustomHooks from "./components/custom-hooks/CustomHooks";
 import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
+import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
 import {
   Component,
@@ -58,6 +60,7 @@ export default function App() {
   const [reduxOpen, setReduxOpen] = useState(false);
   const [apiOpen, setApiOpen] = useState(false);
   const [formsOpen, setFormsOpen] = useState(false);
+  const [customHooksOpen, setCustomHooksOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -150,6 +153,9 @@ export default function App() {
                 <Link to="/life-cycle">
                   <LifeBuoy size={16} /> Life Cycle
                 </Link>
+                <Link to="/auth/Dashboard">
+                  <Hash size={16} /> Auth Page
+                </Link>
 
                 <div className="forms-dropdown">
                   <button
@@ -228,6 +234,24 @@ export default function App() {
                       </Link>
                       <Link to="/advanced/hooks">
                         <Hash size={14} /> Task Manager
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <div className="custom-hooks-categories">
+                  <button
+                    onClick={() => setCustomHooksOpen(!customHooksOpen)}
+                    className="dropdown-btn"
+                  >
+                    {customHooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                    <Code size={16} /> Custom Hooks
+                  </button>
+
+                  {customHooksOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/advanced/custom-hooks">
+                        <Hash size={14} /> useFetch
                       </Link>
                     </div>
                   )}
@@ -343,39 +367,21 @@ export default function App() {
             <Route path="/state/users" element={<TablesListUsers />} />
 
             <Route path="/life-cycle" element={<LifeCycle />} />
+            <Route path="/auth/*" element={<AuthPage />} />
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
 
             {/* HOOKS ROUTES */}
-            <Route
-              path="/advanced/hooks/useState"
-              element={<UseStateExample />}
-            />
+            <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
             <Route path="/advanced/hooks/useRef" element={<UseRefExample />} />
-            <Route
-              path="/advanced/hooks/useEffect"
-              element={<UseEffectExample />}
-            />
-            <Route
-              path="/advanced/hooks/useMemo"
-              element={<UseMemoExample />}
-            />
-            <Route
-              path="/advanced/hooks/useCallback"
-              element={<UseCallbackExample />}
-            />
-            <Route
-              path="/advanced/hooks/useLayoutEffect"
-              element={<UseLayoutEffectExample />}
-            />
-            <Route
-              path="/advanced/hooks/useReducer"
-              element={<UseReducerExample />}
-            />
-            <Route
-              path="/advanced/hooks/useContext"
-              element={<UseContextExample />}
-            />
+            <Route path="/advanced/hooks/useEffect" element={<UseEffectExample />} />
+            <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
+            <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
+            <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
+            <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
+            <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
+            <Route path="/advanced/hooks/custom-hooks" element={<CustomHooks />} />
+            <Route path="/advanced/custom-hooks" element={<CustomHooks />} />
 
             {/* API ROUTES */}
             <Route
