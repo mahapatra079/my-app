@@ -16,14 +16,13 @@ import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
 import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import AddContacts from "./components/redux/phone-book/add-contacts";
-import { TaskManager } from "./components/hooks/features/TaskManager";
-import UseStateExample from "./components/hooks/UseStateExample";
+import UseStateExample from "./components/hooks/StateManagement/UseStateExample";
+import UseReducerExample from "./components/hooks/StateManagement/UseReducerExample";
 import UseRefExample from "./components/hooks/UseRefExample";
-import UseEffectExample from "./components/hooks/UseEffectExample";
-import UseMemoExample from "./components/hooks/UseMemoExample";
+import UseEffectExample from "./components/hooks/SideEffects/UseEffectExample";
+import { UseLayoutEffectExample } from "./components/hooks/SideEffects/UseLayoutEffectExample";
+import UseMemoExample from "./components/hooks/Memo/UseMemoExample";
 import UseCallbackExample from "./components/hooks/UseCallbackExample";
-import { UseLayoutEffectExample } from "./components/hooks/UseLayoutEffectExample";
-import UseReducerExample from "./components/hooks/UseReducerExample";
 import UseContextExample from "./components/hooks/UseContextExample";
 import CustomHooks from "./components/custom-hooks/CustomHooks";
 import Calculator from "./components/state-management/features/Calculator";
@@ -211,11 +210,17 @@ export default function App() {
                       <Link to="/advanced/hooks/useState">
                         <Hash size={14} /> useState
                       </Link>
+                      <Link to="/advanced/hooks/useReducer">
+                        <Hash size={14} /> useReducer
+                      </Link>
                       <Link to="/advanced/hooks/useRef">
                         <Hash size={14} /> useRef
                       </Link>
                       <Link to="/advanced/hooks/useEffect">
                         <Hash size={14} /> useEffect
+                      </Link>
+                      <Link to="/advanced/hooks/useLayoutEffect">
+                        <Hash size={14} /> useLayoutEffect
                       </Link>
                       <Link to="/advanced/hooks/useMemo">
                         <Hash size={14} /> useMemo
@@ -223,17 +228,8 @@ export default function App() {
                       <Link to="/advanced/hooks/useCallback">
                         <Hash size={14} /> useCallback
                       </Link>
-                      <Link to="/advanced/hooks/useLayoutEffect">
-                        <Hash size={14} /> useLayoutEffect
-                      </Link>
-                      <Link to="/advanced/hooks/useReducer">
-                        <Hash size={14} /> useReducer
-                      </Link>
                       <Link to="/advanced/hooks/useContext">
                         <Hash size={14} /> useContext
-                      </Link>
-                      <Link to="/advanced/hooks">
-                        <Hash size={14} /> Task Manager
                       </Link>
                     </div>
                   )}
@@ -373,12 +369,12 @@ export default function App() {
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
+            <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
             <Route path="/advanced/hooks/useRef" element={<UseRefExample />} />
             <Route path="/advanced/hooks/useEffect" element={<UseEffectExample />} />
+            <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
             <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
             <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
-            <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
-            <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
             <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
             <Route path="/advanced/hooks/custom-hooks" element={<CustomHooks />} />
             <Route path="/advanced/custom-hooks" element={<CustomHooks />} />
@@ -410,7 +406,6 @@ export default function App() {
                 </div>
               }
             />
-            <Route path="/advanced/hooks" element={<TaskManager />} />
           </Routes>
         </main>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { UseLayoutEffectWidth } from './UseLayoutEffectWidth';
+import { UseLayoutEffectWidth } from '../UseLayoutEffectWidth';
 
 export const UseLayoutEffectExample = () => {
   const [count, setCount] = useState(0);
