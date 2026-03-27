@@ -1,11 +1,21 @@
-import React from 'react';
+import {useState} from 'react';
+import { ExpensiveComponent } from './ExpensiveComponent';
 
 export const UseMemoExample = () => {
+    const [count, setCount] = useState(0);
+    const handleCount = () => { 
+        setCount(count + 1);
+    };
     return (
-        <>
+      <>
         <div className="card">
-            hey
+            <h2 className='mb-10'>useMemo Example</h2>
+             <div>
+                <ExpensiveComponent />
+                <button className='addBtn' onClick={handleCount}>Re-Render the Parent</button>  
+                <p>Parent Re-Renders: {count}</p>
+            </div>
         </div>
-        </>
+      </>
     );
 }
