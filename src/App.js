@@ -21,7 +21,7 @@ import UseReducerExample from "./components/hooks/StateManagement/UseReducerExam
 import UseRefExample from "./components/hooks/UseRefExample";
 import UseEffectExample from "./components/hooks/SideEffects/UseEffectExample";
 import { UseLayoutEffectExample } from "./components/hooks/SideEffects/UseLayoutEffectExample";
-import UseMemoExample from "./components/hooks/Memo/UseMemoExample";
+import {UseMemoExample} from "./components/hooks/Memo/UseMemoExample";
 import UseCallbackExample from "./components/hooks/UseCallbackExample";
 import UseContextExample from "./components/hooks/UseContextExample";
 import CustomHooks from "./components/custom-hooks/CustomHooks";
