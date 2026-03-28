@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import LoginForm from "../common-component/LoginForm";
-import DashboardPage from "../common-component/Dashboard";
+import LoginForm from "../auth/LoginForm";
+import DashboardPage from "../auth/Dashboard";
 
 function Login() {
     return <LoginForm />;

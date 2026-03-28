@@ -1,4 +1,4 @@
-import { Parent } from './Parent';
+import { Parent } from '../props/Parent';
 
 export const GrandParent = ({ user, setUser }) => (
   <div style={{ border: '2px solid red', padding: '10px', margin: '5px' }}>

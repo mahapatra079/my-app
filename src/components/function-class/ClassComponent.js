@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // Imports Component class to create class-based components
 
-class Welcome extends Component {
+class ClassComponent extends Component {
 // Defines a class component
 // extends Component gives access to React features
 
@@ -9,13 +9,16 @@ class Welcome extends Component {
     //   render() is mandatory in class components 
     // It returns JSX
     
-    return (
-      <h2 className="textCenter">Class Component Example</h2>
+      return (
+        <div className="card">
+          <h2 className="font-medium text-xl">Class Component</h2>
+          <p className="text-lg text-gray-500 border-2 border-gray-300 p-2 mt-20">Class Component Example</p>
+      </div>
     );
   }
 }
 
-export default Welcome;
+export default ClassComponent;
 
 
 // A class component extends React.Component and must contain a render method that returns JSX.

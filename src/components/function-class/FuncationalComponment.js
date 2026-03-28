@@ -1,9 +1,14 @@
 
-function Greet({ name }) {    
-    return <h2 className="textCenter">Hello World : {name} This is Functional Component Example</h2>
+function FuncationalComponment({ name }) {    
+    return (
+        <div className="card">
+            <h2 className="font-medium text-xl">Functional Component</h2>
+            <p className="text-lg text-gray-500 border-2 border-gray-300 p-2 mt-20">Hello World : {name}</p>
+        </div>
+    );
 }
 
-export default Greet;
+export default FuncationalComponment;
 
 // Exports the component so it can be imported and used in other files.
 // default export means we can import it with any name.

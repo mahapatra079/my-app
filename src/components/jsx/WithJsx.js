@@ -1,9 +1,11 @@
 
 function WithJsx(){
-    return(
-        <h3 className="textCenter">
-            This is our JSX Version
-        </h3>
+    return (
+        <div className="card">
+            <h3 className="font-medium text-xl">
+                JSX Version
+            </h3>
+        </div>
     )
 }
 

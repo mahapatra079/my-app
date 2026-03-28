@@ -2,8 +2,8 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-import FunctionalComponent from "./components/function-class/Greet";
-import Welcome from "./components/function-class/Welcome";
+import FunctionalComponent from "./components/function-class/FuncationalComponment";
+import Welcome from "./components/function-class/ClassComponent";
 import WithJsx from "./components/jsx/WithJsx";
 import { WithoutJsx } from "./components/jsx/WithoutJsx";
 import Fragment from "./components/jsx/Fragment";
@@ -324,7 +324,7 @@ export default function App() {
             {/* BASIC ROUTES */}
             <Route
               path="/functional-component"
-              element={<FunctionalComponent name="Good Morning" />}
+              element={<FunctionalComponent name="This is called Functional Component" />}
             />
             <Route path="/class-component" element={<Welcome />} />
             <Route path="/jsx-version" element={<WithJsx />} />
