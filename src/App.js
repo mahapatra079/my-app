@@ -18,12 +18,13 @@ import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import AddContacts from "./components/redux/phone-book/add-contacts";
 import UseStateExample from "./components/hooks/StateManagement/UseStateExample";
 import UseReducerExample from "./components/hooks/StateManagement/UseReducerExample";
-import UseRefExample from "./components/hooks/UseRefExample";
+import UseRefExample from "./components/hooks/UseRef/UseRefExample";
 import UseEffectExample from "./components/hooks/SideEffects/UseEffectExample";
 import { UseLayoutEffectExample } from "./components/hooks/SideEffects/UseLayoutEffectExample";
-import {UseMemoExample} from "./components/hooks/Memo/UseMemoExample";
-import UseCallbackExample from "./components/hooks/UseCallbackExample";
-import UseContextExample from "./components/hooks/UseContextExample";
+import {UseMemoExample} from "./components/hooks/Memoization/Memo/UseMemoExample";
+import {ReactMemo} from "./components/hooks/Memoization/ReactMemo/ReactMemo";
+import UseCallbackExample from "./components/hooks/Memoization/UseCallbackMemo/UseCallbackExample";
+import UseContext from "./components/hooks/Context/UseContext";
 import CustomHooks from "./components/custom-hooks/CustomHooks";
 import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
@@ -33,21 +34,10 @@ import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
 import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
-import {
-  Component,
-  Code,
-  FileText,
-  MousePointer,
-  Hash,
-  Phone,
-  Calculator as CalcIcon,
-  Atom,
-  LifeBuoy,
-  ChevronDown,
-  ChevronRight,
-} from "lucide-react";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
+
+import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
 
 export default function App() {
   const location = useLocation();
@@ -225,6 +215,9 @@ export default function App() {
                       <Link to="/advanced/hooks/useMemo">
                         <Hash size={14} /> useMemo
                       </Link>
+                      <Link to="/advanced/hooks/reactMemo">
+                        <Hash size={14} /> React.memo
+                      </Link>
                       <Link to="/advanced/hooks/useCallback">
                         <Hash size={14} /> useCallback
                       </Link>
@@ -369,13 +362,14 @@ export default function App() {
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
-            <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
             <Route path="/advanced/hooks/useRef" element={<UseRefExample />} />
+            <Route path="/advanced/hooks/useContext" element={<UseContext />} />
+            <Route path="/advanced/hooks/useReducer" element={<UseReducerExample />} />
             <Route path="/advanced/hooks/useEffect" element={<UseEffectExample />} />
             <Route path="/advanced/hooks/useLayoutEffect" element={<UseLayoutEffectExample />} />
             <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
+            <Route path="/advanced/hooks/reactMemo" element={<ReactMemo />} />
             <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
-            <Route path="/advanced/hooks/useContext" element={<UseContextExample />} />
             <Route path="/advanced/hooks/custom-hooks" element={<CustomHooks />} />
             <Route path="/advanced/custom-hooks" element={<CustomHooks />} />
 
