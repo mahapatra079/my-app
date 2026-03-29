@@ -25,7 +25,6 @@ import {UseMemoExample} from "./components/hooks/Memoization/Memo/UseMemoExample
 import {ReactMemo} from "./components/hooks/Memoization/ReactMemo/ReactMemo";
 import UseCallbackExample from "./components/hooks/Memoization/UseCallbackMemo/UseCallbackExample";
 import UseContext from "./components/hooks/Context/UseContext";
-import CustomHooks from "./components/custom-hooks/CustomHooks";
 import Calculator from "./components/state-management/features/Calculator";
 import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
@@ -42,15 +41,16 @@ import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, 
 
 export default function App() {
   const location = useLocation();
+
   const isAdvanced =
     location.pathname.startsWith("/advanced") ||
     location.pathname.startsWith("/hooks");
+  
   const [hooksOpen, setHooksOpen] = useState(false);
   const [stateOpen, setStateOpen] = useState(false);
   const [reduxOpen, setReduxOpen] = useState(false);
   const [apiOpen, setApiOpen] = useState(false);
   const [formsOpen, setFormsOpen] = useState(false);
-  const [customHooksOpen, setCustomHooksOpen] = useState(false);
   const [eventsOpen, setEventsOpen] = useState(false);
   const [jsxOpen, setJsxOpen] = useState(false);
 
@@ -248,23 +248,6 @@ export default function App() {
                   )}
                 </div>
 
-                <div className="custom-hooks-categories">
-                  <button
-                    onClick={() => setCustomHooksOpen(!customHooksOpen)}
-                    className="dropdown-btn"
-                  >
-                    {customHooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-                    <Code size={16} /> Custom Hooks
-                  </button>
-
-                  {customHooksOpen && (
-                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
-                      <Link to="/advanced/custom-hooks">
-                        <Hash size={14} /> useFetch
-                      </Link>
-                    </div>
-                  )}
-                </div>
                 <div className="api-categories">
                   <button
                     onClick={() => setApiOpen(!apiOpen)}
@@ -391,8 +374,6 @@ export default function App() {
             <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
             <Route path="/advanced/hooks/reactMemo" element={<ReactMemo />} />
             <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
-            <Route path="/advanced/hooks/custom-hooks" element={<CustomHooks />} />
-            <Route path="/advanced/custom-hooks" element={<CustomHooks />} />
 
             {/* API ROUTES */}
             <Route
