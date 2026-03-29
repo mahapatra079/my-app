@@ -8,7 +8,7 @@ function ClickCounter2(props) {
 
     return (
         <>
-            <div className="card border-4 border-gray-300">
+            <div className="card border-2 border-gray-300">
                 <p>Count: {count}</p>  
                 <button className="addBtn" onClick={incrmentCount}>click</button>
             </div>
