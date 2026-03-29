@@ -38,7 +38,7 @@ import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
 import HOC from "./components/HOC/HOC";
 
-import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
+import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
 
 export default function App() {
   const location = useLocation();
@@ -51,6 +51,8 @@ export default function App() {
   const [apiOpen, setApiOpen] = useState(false);
   const [formsOpen, setFormsOpen] = useState(false);
   const [customHooksOpen, setCustomHooksOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const [jsxOpen, setJsxOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -76,36 +78,50 @@ export default function App() {
                   <Component size={16} /> Class Component
                 </Link>
                 <hr />
-                <Link to="/jsx-version">
-                  <Code size={16} /> With JSX
-                </Link>
-                <Link to="/without-jsx">
-                  <FileText size={16} /> Without JSX
-                </Link>
-                <Link to="/fragment">
-                  <Code size={16} /> Fragment
-                </Link>
+                <div className="jsx-dropdown">
+                  <button
+                    onClick={() => setJsxOpen(!jsxOpen)}
+                    className="dropdown-btn"
+                  >
+                    {jsxOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                    <Code size={16} /> JSX
+                  </button>
+
+                  {jsxOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/jsx-version"><Hash size={14} /> With JSX</Link>
+                      <Link to="/without-jsx"><Hash size={14} /> Without JSX</Link>
+                      <Link to="/fragment"><Hash size={14} /> Fragment</Link>
+                    </div>
+                  )}
+                </div>
                 <hr />
                 <Link to="/props">
                   <Hash size={16} /> Props
-                </Link>
-                <Link to="/event-handling">
-                  <MousePointer size={16} /> Event Handling
-                </Link>
-                <Link to="/event-objects">
-                  <MousePointer size={16} /> Event Objects
-                </Link>
-                <Link to="/event-handler-props">
-                  <MousePointer size={16} /> Event Handler Props
-                </Link>
-                <Link to="/event-contact">
-                  <Phone size={16} /> Event Contact
                 </Link>
                 <hr />
                 <Link to="/counter">
                   <CalcIcon size={16} /> Counter
                 </Link>
 
+                <div className="events-dropdown">
+                  <button
+                    onClick={() => setEventsOpen(!eventsOpen)}
+                    className="dropdown-btn"
+                  >
+                    {eventsOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                    <MousePointer size={16} /> Events
+                  </button>
+
+                  {eventsOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/event-handling"><Hash size={14} /> Event Handling</Link>
+                      <Link to="/event-objects"><Hash size={14} /> Event Objects</Link>
+                      <Link to="/event-handler-props"><Hash size={14} /> Event Handler Props</Link>
+                      <Link to="/event-contact"><Hash size={14} /> Event Contact</Link>
+                    </div>
+                  )}
+                </div>
                 <div className="state-management">
                   <button
                     onClick={() => setStateOpen(!stateOpen)}
