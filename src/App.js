@@ -35,7 +35,8 @@ import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
-import HOC from "./components/HOC/HOC";
+import HOC from "./components/resuable-logic/HOC/HOC";
+import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
 
@@ -53,6 +54,7 @@ export default function App() {
   const [formsOpen, setFormsOpen] = useState(false);
   const [eventsOpen, setEventsOpen] = useState(false);
   const [jsxOpen, setJsxOpen] = useState(false);
+  const [customHooksOpen, setCustomHooksOpen] = useState(false);
 
   const Logo = () => (
     <h2 className="textCenter">
@@ -159,9 +161,6 @@ export default function App() {
                 <Link to="/life-cycle">
                   <LifeBuoy size={16} /> Life Cycle
                 </Link>
-                <Link to="/hoc">
-                  <Hash size={16} /> HOC
-                </Link>
                 <Link to="/auth/Dashboard">
                   <Hash size={16} /> Auth Page
                 </Link>
@@ -243,6 +242,25 @@ export default function App() {
                       </Link>
                       <Link to="/advanced/hooks/useContext">
                         <Hash size={14} /> useContext
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <div className="custom-hooks-categories">
+                  <button
+                    onClick={() => setCustomHooksOpen(!customHooksOpen)}
+                    className="dropdown-btn"
+                  >
+                    {customHooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                    <Code size={16} /> Reusable Logic
+                  </button>
+
+                  {customHooksOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/advanced/hoc"><Hash size={14} /> HOC</Link>
+                      <Link to="/advanced/custom-hooks/marvel-products">
+                        <Hash size={14} /> Marvel Products
                       </Link>
                     </div>
                   )}
@@ -359,8 +377,7 @@ export default function App() {
             <Route path="/state/users" element={<TablesListUsers />} />
 
             <Route path="/life-cycle" element={<LifeCycle />} />
-            <Route path="/hoc" element={<HOC />} />
-            <Route path="/auth/*" element={<AuthPage />} />
+            <Route path="/hoc" element={<HOC />} />            <Route path="/auth/*" element={<AuthPage />} />
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
 
@@ -374,6 +391,8 @@ export default function App() {
             <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
             <Route path="/advanced/hooks/reactMemo" element={<ReactMemo />} />
             <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
+            <Route path="/advanced/hoc" element={<HOC />} />
+            <Route path="/advanced/custom-hooks/marvel-products" element={<MarvelProducts />} />
 
             {/* API ROUTES */}
             <Route
