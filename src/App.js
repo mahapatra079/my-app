@@ -36,6 +36,7 @@ import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
+import HOC from "./components/HOC/HOC";
 
 import { Component, Code, FileText, MousePointer, Hash, Phone, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
 
@@ -141,6 +142,9 @@ export default function App() {
 
                 <Link to="/life-cycle">
                   <LifeBuoy size={16} /> Life Cycle
+                </Link>
+                <Link to="/hoc">
+                  <Hash size={16} /> HOC
                 </Link>
                 <Link to="/auth/Dashboard">
                   <Hash size={16} /> Auth Page
@@ -356,6 +360,7 @@ export default function App() {
             <Route path="/state/users" element={<TablesListUsers />} />
 
             <Route path="/life-cycle" element={<LifeCycle />} />
+            <Route path="/hoc" element={<HOC />} />
             <Route path="/auth/*" element={<AuthPage />} />
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
