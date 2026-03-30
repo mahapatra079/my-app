@@ -7,18 +7,19 @@ export const MarvelProducts = () => {
   return (
     <>
       <div className="card max-w-6xl mx-auto">
-        <h1 className="font-bold text-2xl">Marvel Products</h1>
+        <div className="flex item-center justify-between">
+            <h1 className="font-bold text-2xl">Marvel Products</h1>
 
-        {/* Filter  */}
-        <div>
-          <input
-            className="mt-4 h-8 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            type="text"
-            placeholder="Search products..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+            {/* Filter  */}
+            <input
+              className="h-8 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="Search products..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+         </div>
+              
         {/* Product List */}
         <ul className="grid grid-cols-2 gap-4 p-4">
           {filteredProducts.map((product) => (
@@ -32,7 +33,9 @@ export const MarvelProducts = () => {
                   <img src={product.image} alt={product.title} width="100" />
                 )}
                 {product.summary && (
-                  <p className="text-gray-600 text-lg">{product.summary}</p>
+                  <p className="text-gray-600 text-lg break-words">
+                    {product.summary}
+                  </p>
                 )}
                 {/* conditional rendering using logical AND (&&) */}
                 {/* JavaScript evaluates the left side first → product.summary */}
