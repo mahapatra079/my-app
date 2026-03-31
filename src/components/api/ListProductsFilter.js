@@ -18,20 +18,21 @@ function ListProductsFilter() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className ="card" style={{ padding: "20px" }}>
 
-      <h2>Product List</h2>
+      <h2 className="font-bold text xl">Product List</h2>
 
       <input
+        className="form-control block m-4"
         type="text"
         placeholder="Search product"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <ul>
+      <ul className="flex flex-col gap-2">
         {filteredProducts.map(product => (
-          <li key={product.id}>
+          <li key={product.id} className="border-2 p-2">
             {product.title} - ${product.price}
           </li>
         ))}
