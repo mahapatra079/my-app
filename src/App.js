@@ -1,5 +1,5 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Provider } from "react-redux";
 import store from "./store";
 import FunctionalComponent from "./components/function-class/FuncationalComponment";
@@ -36,9 +36,19 @@ import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
 import HOC from "./components/resuable-logic/HOC/HOC";
-import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
+// import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
+
+// Lazy load the MarvelProducts component
+const MarvelProducts = lazy(() =>
+  import("./components/resuable-logic/custom-hook/MarvelProducts").then(
+    (module) => ({ default: module.MarvelProducts })
+    // If MarvelProducts is the default export, use:
+    // (module) => ({ default: module.default })
+  )
+);
+console.log("MarvelProducts component loaded", MarvelProducts);
 
 export default function App() {
   const location = useLocation();
@@ -247,25 +257,6 @@ export default function App() {
                   )}
                 </div>
 
-                <div className="custom-hooks-categories">
-                  <button
-                    onClick={() => setCustomHooksOpen(!customHooksOpen)}
-                    className="dropdown-btn"
-                  >
-                    {customHooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-                    <Code size={16} /> Reusable Logic
-                  </button>
-
-                  {customHooksOpen && (
-                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
-                      <Link to="/advanced/hoc"><Hash size={14} /> HOC</Link>
-                      <Link to="/advanced/custom-hooks/marvel-products">
-                        <Hash size={14} /> Marvel Products
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
                 <div className="api-categories">
                   <button
                     onClick={() => setApiOpen(!apiOpen)}
@@ -286,6 +277,25 @@ export default function App() {
                       </Link>
                       <Link to="/advanced/api/comments">
                         <Hash size={14} /> ApiTable
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                 <div className="custom-hooks-categories">
+                  <button
+                    onClick={() => setCustomHooksOpen(!customHooksOpen)}
+                    className="dropdown-btn"
+                  >
+                    {customHooksOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                    <Code size={16} /> Reusable Logic
+                  </button>
+
+                  {customHooksOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/advanced/hoc"><Hash size={14} /> HOC</Link>
+                      <Link to="/advanced/custom-hooks/marvel-products">
+                        <Hash size={14} /> Marvel Products
                       </Link>
                     </div>
                   )}
@@ -391,8 +401,7 @@ export default function App() {
             <Route path="/advanced/hooks/useMemo" element={<UseMemoExample />} />
             <Route path="/advanced/hooks/reactMemo" element={<ReactMemo />} />
             <Route path="/advanced/hooks/useCallback" element={<UseCallbackExample />} />
-            <Route path="/advanced/hoc" element={<HOC />} />
-            <Route path="/advanced/custom-hooks/marvel-products" element={<MarvelProducts />} />
+           
 
             {/* API ROUTES */}
             <Route
@@ -400,6 +409,25 @@ export default function App() {
               element={<ListProductsFilter />}
             />
             <Route path="/advanced/api/comments" element={<ApiTable />} />
+
+            {/* Reusable Logic Routes */}
+             <Route path="/advanced/hoc" element={<HOC />} />
+            {/* <Route path="/advanced/custom-hooks/marvel-products" element={<MarvelProducts />} /> */}
+
+              <Route
+                path="/advanced/custom-hooks/marvel-products"
+                element={
+                  <Suspense
+                    fallback={
+                      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white text-gray-700 text-lg font-semibold">
+                        Loading Products...
+                      </div>
+                    }
+                  >
+                    <MarvelProducts />
+                  </Suspense>
+                }
+              />
 
             {/* REDUX ROUTES */}
             <Route path="/advanced/redux" element={<AddContacts />} />
