@@ -36,6 +36,8 @@ import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
 import HOC from "./components/resuable-logic/HOC/HOC";
+import FormValidation from "./components/forms/FormsValidation";
+
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
@@ -195,6 +197,9 @@ export default function App() {
                       </Link>
                       <Link to="/uncontrolled">
                         <Hash size={14} /> Uncontrolled
+                      </Link>
+                      <Link to="/form-validation">
+                        <Hash size={14} /> Form Validation
                       </Link>
                     </div>
                   )}
@@ -385,11 +390,14 @@ export default function App() {
             <Route path="/state/todo" element={<ToDoList />} />
             <Route path="/state/tabs" element={<TabSelection />} />
             <Route path="/state/users" element={<TablesListUsers />} />
-
+            <Route path="/auth/*" element={<AuthPage />} />
             <Route path="/life-cycle" element={<LifeCycle />} />
-            <Route path="/hoc" element={<HOC />} />            <Route path="/auth/*" element={<AuthPage />} />
+            <Route path="/hoc" element={<HOC />} />  
+            
+            {/* Controlled Components */}
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
+            <Route path="/form-validation" element={<FormValidation />} />
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
