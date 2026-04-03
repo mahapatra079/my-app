@@ -4,13 +4,13 @@ function FormOptimizeVersion() {
 
     const [form,setForm] = useState({ // Single state object to hold all form fields
         name: '',  // Single state object to hold all form fields
-        mobile: '', // This approach reduces the number of useState calls and simplifies state management
+        mobile: '',
         email: ''   // It also allows us to easily add more fields in the future without needing to create new state variables
     });
 
-    const handleChange = (e) => { // Generic change handler for all input fields
+    const handleChange = (e) => {
         const {name,value} = e.target; // Destructure name and value from the event target
-        setForm(prevState => ({   // Use functional update to ensure we have the latest state
+        setForm(prevState => ({  
             ...prevState,  // Spread the previous state to keep other fields unchanged
             [name]: value  // Update the specific field that changed
         }));
