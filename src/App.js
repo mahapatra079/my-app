@@ -35,6 +35,7 @@ import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
+import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
 
@@ -277,6 +278,9 @@ export default function App() {
 
                   {apiOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/advanced/api/fetching-api">
+                        <Hash size={14} /> FetchingApi
+                      </Link>
                       <Link to="/advanced/api/list-products">
                         <Hash size={14} /> ListProductsFilter
                       </Link>
@@ -412,6 +416,7 @@ export default function App() {
            
 
             {/* API ROUTES */}
+            <Route path="/advanced/api/fetching-api" element={<FetchingApi />} />
             <Route
               path="/advanced/api/list-products"
               element={<ListProductsFilter />}
