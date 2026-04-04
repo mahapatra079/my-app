@@ -27,13 +27,12 @@ function ErrorFetchingApi() {
 
             {/* Show users if no error */}
             {!error && (
-                <ul className='flex flex-col gap-4 p-2'>
-                    
-            {users
-                .filter(user => [1, 3].includes(user.id)) // Only show users with id 1 and 3 to demonstrate error handling
-                .map(user => ( 
-                    <li key={user.id}>{user.username}</li>
-                ))}
+             <ul className='flex flex-col gap-4 p-2'>                    
+              {users
+                  .filter(user => [1, 3].includes(user.id)) // Only show users with id 1 and 3 to demonstrate error handling
+                  .map(user => ( 
+                      <li key={user.id}>{user.username}</li>
+                  ))}
             </ul>
         )}
     </div>
