@@ -1,7 +1,9 @@
 import { useState } from "react";
 import FormOptimizeVersion from "./FormsOptimizeVersion";
 import FormValidationUnControlled from "./FormValidationUnControlled";
-import FormValidationRenderingBrowser from "./FormValidationRenderingBrowser";
+import UseFormConditionally from "./UseFormConditionally";
+import UseForm from "./UserForm";
+import DeleteUseForm from "./DeleteUseForm";
 
 function FormValidation() {
 
@@ -40,26 +42,25 @@ function FormValidation() {
                     <div className="grid grid-cols-3 gap-4 mt-4">
                         <div className="flex flex-col items-start gap-3">
                             <label htmlFor="name" className="text-xs truncate w-full">Name: {name}</label>
-                            <input type="text" id="name" name="name" value={name} required onChange={handleName} className="form-control" />
-                            { !name && <span className="text-sm text-red-500"> Required *</span> }
+                            <input type="text" id="name" name="name" value={name} onChange={handleName} className="form-control" />
                         </div>
                         <div className="flex flex-col items-start gap-3">
                             <label htmlFor="mobile" className="text-xs truncate w-full">Mobile: {mobile}</label>
-                            <input type="tel" id="mobile" name="mobile" value={mobile} required onChange={handleMobile} className="form-control" />
-                            { !mobile && <span className="text-sm text-red-500"> Required *</span> }    
+                            <input type="text" id="mobile" name="mobile" value={mobile} onChange={handleMobile} className="form-control" />
                         </div>
                         <div className="flex flex-col items-start gap-3">
                             <label htmlFor="email" className="text-xs truncate w-full">Email: {email}</label>
-                            <input type="email" id="email" name="email" value={email} required onChange={handleEmail} className="form-control " />
-                            { !email && <span className="text-sm text-red-500"> Required *</span> }
+                            <input type="email" id="email" name="email" value={email} onChange={handleEmail} className="form-control " />
                         </div>
                     </div>
-                  <button type="submit" className="addBtn" disabled={!name || !mobile || !email}>Submit</button>
+                  <button type="submit" className="addBtn">Submit</button>
                 </form>
                 <>
                   <FormOptimizeVersion />
                   <FormValidationUnControlled/>
-                  <FormValidationRenderingBrowser />
+                  <UseFormConditionally />
+                  <UseForm/>
+                  <DeleteUseForm/>
                 </>
             </div>
         </>

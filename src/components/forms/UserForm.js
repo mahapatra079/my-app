@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function FormValidationRenderingBrowser() {
+function UseForm() {
 
     const [name, setName] = useState('');
     const [mobile, setMobile] = useState('');
@@ -33,8 +33,8 @@ function FormValidationRenderingBrowser() {
 
     return (
         <>
-            <form className="card border-4 border-blue-500" onSubmit={handleSubmit}>
-                <h2 className="font-bold text-xl">Form Validation - Rendering in Browser</h2>
+            <form className="card border-4 border-green-500" onSubmit={handleSubmit}>
+                <h2 className="font-bold text-xl">Form Validation - Rendering in Browser (Decision Making)</h2>
                 <div className="grid grid-cols-3 gap-4 mt-4">
                     <div className="flex flex-col items-start gap-3">
                         <label htmlFor="name" className="text-xs truncate w-full">Name: {name}</label>
@@ -43,7 +43,7 @@ function FormValidationRenderingBrowser() {
                     </div>
                     <div className="flex flex-col items-start gap-3">
                         <label htmlFor="mobile" className="text-xs truncate w-full">Mobile: {mobile}</label>
-                        <input type="tel" id="mobile" name="mobile" value={mobile} required onChange={handleMobile} className="form-control" />
+                        <input type="text" id="mobile" name="mobile" value={mobile} required onChange={handleMobile} className="form-control" />
                         { !mobile && <span className="text-sm text-red-500"> Required *</span> }    
                     </div>
                     <div className="flex flex-col items-start gap-3">
@@ -54,12 +54,16 @@ function FormValidationRenderingBrowser() {
                 </div>
                 <button type="submit" className="addBtn" disabled={!name || !mobile || !email}>Submit</button>
                 {/* Show submitted data */}
-                {submittedData && (
+                {submittedData ? (
                     <div className="mt-10 p-4 border-2 border-green-500 rounded">
                         <h3 className="font-bold text-xl">Submitted Data: Rendering on Browser</h3>
                         <p className="font-medium text-lg">Name: {submittedData.name}</p>
                         <p className="font-medium text-lg">Mobile: {submittedData.mobile}</p>
                         <p className="font-medium text-lg">Email: {submittedData.email}</p>
+                    </div>
+                ) : (
+                    <div className="mt-10 p-4 border-2 border-yellow-500 rounded">
+                        <h3 className="font-bold text-xl">No data submitted yet</h3>
                     </div>
                 )}
             </form>
@@ -68,6 +72,6 @@ function FormValidationRenderingBrowser() {
     );
 }
 
-export default FormValidationRenderingBrowser;
+export default UseForm;
 
    

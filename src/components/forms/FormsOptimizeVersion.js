@@ -34,7 +34,7 @@ function FormOptimizeVersion() {
                 </div>
                 <div className="flex flex-col items-start gap-3">
                     <label htmlFor="mobile" className="text-xs truncate w-full">Mobile: {form.mobile}</label>
-                    <input type="tel" id="mobile" name="mobile" value={form.mobile} required onChange={handleChange} className="form-control" />
+                    <input type="text" id="mobile" name="mobile" value={form.mobile} required onChange={handleChange} className="form-control" />
                     { !form.mobile && <span className="text-sm text-red-500"> Required *</span> }    
                 </div>
                 <div className="flex flex-col items-start gap-3">
