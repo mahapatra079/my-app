@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormOptimizeVersion from "./FormsOptimizeVersion";
 import FormValidationUnControlled from "./FormValidationUnControlled";
+import FormValidationRenderingBrowser from "./FormValidationRenderingBrowser";
 
 function FormValidation() {
 
@@ -58,6 +59,7 @@ function FormValidation() {
                 <>
                   <FormOptimizeVersion />
                   <FormValidationUnControlled/>
+                  <FormValidationRenderingBrowser />
                 </>
             </div>
         </>

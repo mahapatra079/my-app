@@ -40,3 +40,14 @@ function ErrorFetchingApi() {
 }
 
 export default ErrorFetchingApi;
+
+
+// filter() is an array method
+// It loops through each item
+// Returns a new filtered array based on a condition
+// Why: Used to select specific data from a larger dataset 
+
+// map() is an array method
+// It loops through each element
+// Returns a new array with the results of calling a function on every element
+// Why: Used to transform data, e.g. extract specific properties or format data for display
