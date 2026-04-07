@@ -38,6 +38,7 @@ import ListProductsFilter from "./components/api/ListProductsFilter";
 import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
+import DashboardCard from "./components/Children/DashboardCard";
 
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
@@ -205,6 +206,9 @@ export default function App() {
                     </div>
                   )}
                 </div>
+                <Link to ="/children">
+                  <Hash size={16} /> Children
+                </Link>
                 <hr />
                 <Link to="/advanced">Advanced Topics →</Link>
               </nav>
@@ -388,6 +392,7 @@ export default function App() {
             />
             <Route path="/event-contact" element={<EventContact />} />
             <Route path="/counter" element={<Counter />} />
+            
             {/* STATE MANAGEMENT ROUTES */}
             <Route path="/state" element={<StateCounter />} />
             <Route path="/state/calculator" element={<Calculator />} />
@@ -402,6 +407,8 @@ export default function App() {
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
             <Route path="/form-validation" element={<FormValidation />} />
+
+            <Route path="/children" element={<DashboardCard />} />
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
