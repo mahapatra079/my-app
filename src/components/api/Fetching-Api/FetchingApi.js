@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ErrorFetchingApi from './ErrorFetchingApi';
 import FilteringAPI from './FilteringAPI';
 import DynamicFilteringAPI from './DynamicFilteringAPI';
+import ErrorFilteringLoadingApi from './ErrorFilteringLoadingApi';
 
 function FetchingApi() {
   const [users, setUsers] = useState([]); // State to hold fetched users
@@ -29,6 +30,7 @@ function FetchingApi() {
         </div>
         <FilteringAPI />
         <ErrorFetchingApi />
+        <ErrorFilteringLoadingApi />
         <DynamicFilteringAPI />
       </div>
     </>

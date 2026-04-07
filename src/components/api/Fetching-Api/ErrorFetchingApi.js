@@ -45,9 +45,31 @@ export default ErrorFetchingApi;
 // filter() is an array method
 // It loops through each item
 // Returns a new filtered array based on a condition
-// Why: Used to select specific data from a larger dataset 
+// Why: Used to select specific data from a larger dataset
 
 // map() is an array method
 // It loops through each element
 // Returns a new array with the results of calling a function on every element
 // Why: Used to transform data, e.g. extract specific properties or format data for display
+
+// throw new Error() is used to manually create and throw an error.
+// It stops normal execution and jumps to .catch() (or error handler).
+
+// fetch() does NOT automatically throw error for:
+
+  // 404
+  // 500
+
+// So we manually do it using:
+  // throw new Error()
+
+// flow
+  // fetch() runs
+// Response comes
+
+// If res.ok === false
+  // throw new Error(...)
+  //  Goes directly to .catch()
+
+// why we use
+    // Even if API fails (404), it still goes forward
