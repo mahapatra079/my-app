@@ -116,9 +116,6 @@ export default function App() {
                   <Hash size={16} /> Props
                 </Link>
                 <hr />
-                <Link to="/counter">
-                  <CalcIcon size={16} /> Counter
-                </Link>
 
                 <div className="events-dropdown">
                   <button
@@ -138,6 +135,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
+
                 <div className="state-management">
                   <button
                     onClick={() => setStateOpen(!stateOpen)}
@@ -153,6 +151,9 @@ export default function App() {
 
                   {stateOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/counter">
+                        <CalcIcon size={16} /> Counter
+                      </Link>
                       <Link to="/state">
                         <Hash size={14} /> State Examples
                       </Link>
@@ -391,9 +392,9 @@ export default function App() {
               element={<EventHandlerProps text="Hit" />}
             />
             <Route path="/event-contact" element={<EventContact />} />
-            <Route path="/counter" element={<Counter />} />
             
             {/* STATE MANAGEMENT ROUTES */}
+            <Route path="/counter" element={<Counter />} />
             <Route path="/state" element={<StateCounter />} />
             <Route path="/state/calculator" element={<Calculator />} />
             <Route path="/state/todo" element={<ToDoList />} />

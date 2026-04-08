@@ -1,11 +1,12 @@
 
 
-function Card({children}) {
+function Card({children,className }) { 
     return (
-        <>
-            <div className="card">{children}</div>
-        </>
+
+       <div className={`card ${className}`}>{children}</div>
+       
     );
 }
 
 export default Card;
+
