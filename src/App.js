@@ -7,6 +7,8 @@ import Welcome from "./components/function-class/ClassComponent";
 import WithJsx from "./components/jsx/WithJsx";
 import { WithoutJsx } from "./components/jsx/WithoutJsx";
 import Fragment from "./components/jsx/Fragment";
+import AuthPage from "./components/conditional-rendering/AuthPage";
+import { ListRenderingListItem } from "./components/rendering-list/ListRenderingListItem";
 import Child from "./components/props/Child";
 import ClickEvent from "./components/event-handling/ClickEvent";
 import EventObjects from "./components/event-handling/EventObjects";
@@ -31,7 +33,6 @@ import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
-import AuthPage from "./components/conditional-rendering/AuthPage";
 import ApiTable from "./components/api/ApiTable";
 import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
@@ -111,10 +112,12 @@ export default function App() {
                     </div>
                   )}
                 </div>
+
                 <hr />
-                <Link to="/props">
-                  <Hash size={16} /> Props
-                </Link>
+                  <Link to="/auth/Dashboard"><Hash size={16} /> Auth Page (Conidtional Rendering)</Link>
+                  <Link to ="/rendering-list"><Hash size={14} />List Rendering</Link>
+                  <Link to ="/children"><Hash size={16} /> Children </Link>
+                  <Link to="/props"><Hash size={16} /> Props </Link>
                 <hr />
 
                 <div className="events-dropdown">
@@ -176,9 +179,7 @@ export default function App() {
                 <Link to="/life-cycle">
                   <LifeBuoy size={16} /> Life Cycle
                 </Link>
-                <Link to="/auth/Dashboard">
-                  <Hash size={16} /> Auth Page
-                </Link>
+              
 
                 <div className="forms-dropdown">
                   <button
@@ -207,9 +208,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <Link to ="/children">
-                  <Hash size={16} /> Children
-                </Link>
+               
                 <hr />
                 <Link to="/advanced">Advanced Topics →</Link>
               </nav>
@@ -375,6 +374,11 @@ export default function App() {
             <Route path="/jsx-version" element={<WithJsx />} />
             <Route path="/without-jsx" element={<WithoutJsx />} />
             <Route path="/fragment" element={<Fragment />} />
+           
+            <Route path="/auth/*" element={<AuthPage />} />
+            <Route path="/rendering-list" element={<ListRenderingListItem />} />
+             <Route path="/children" element={<DashboardCard />} />
+           
             <Route
               path="/props"
               element={
@@ -385,6 +389,7 @@ export default function App() {
                 />
               }
             />
+         
             <Route path="/event-handling" element={<ClickEvent />} />
             <Route path="/event-objects" element={<EventObjects />} />
             <Route
@@ -400,7 +405,7 @@ export default function App() {
             <Route path="/state/todo" element={<ToDoList />} />
             <Route path="/state/tabs" element={<TabSelection />} />
             <Route path="/state/users" element={<TablesListUsers />} />
-            <Route path="/auth/*" element={<AuthPage />} />
+          
             <Route path="/life-cycle" element={<LifeCycle />} />
             <Route path="/hoc" element={<HOC />} />  
             
@@ -408,8 +413,6 @@ export default function App() {
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
             <Route path="/form-validation" element={<FormValidation />} />
-
-            <Route path="/children" element={<DashboardCard />} />
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
