@@ -31,3 +31,13 @@ export const ChildrenRenderingInList = ({children}) => {
 //         <div>child 3</div>
 //     </Card>
 // </Card>
+
+// Why children is Special?
+
+    // props.children is NOT always an array. It can be:
+
+    // Single element
+    // Multiple elements
+    // null / undefined
+    // Fragment
+    // String

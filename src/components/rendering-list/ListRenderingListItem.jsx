@@ -4,9 +4,15 @@ import { ConditionList } from "./ConidtionList"
 import { DynamicApiRendering } from "./DynamicApiRendering"
 import { FilterMapRendering } from "./FilterMapRendering"
 import { NestedList } from "./NestedList"
+import { RenderingComponentsList } from "./RenderingComponentsList"
 import { RenderingObjectTypes } from "./RenderingObjectTypes"
 
 export const ListRenderingListItem = () => {
+     const products = [
+            { id: 1, name: "Phone", price: 20000 },
+            { id: 2, name: "Laptop", price: 50000 }
+      ];
+
     return (
         <>
         <h1 className="font-bold text-xl">List Rendering</h1>
@@ -23,7 +29,15 @@ export const ListRenderingListItem = () => {
                     <p>Item Three</p>
                 </ChildrenRenderingInList>
 
-                <DynamicApiRendering/>
+                <DynamicApiRendering />
+
+                <div className="card">
+                  <h2 className="font-bold text-lg">Rendering Components List</h2>
+                    {products.map(product => (
+                        <RenderingComponentsList  key={product.id} product={product} />
+                    ))}                    
+               </div>
+
             </div>
       </>      
     )
