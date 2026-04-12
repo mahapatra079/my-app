@@ -1,7 +1,6 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
-import { Provider } from "react-redux";
-import store from "./store";
+import  store  from "./store.jsx";
 import FunctionalComponent from "./components/function-class/FuncationalComponment";
 import Welcome from "./components/function-class/ClassComponent";
 import WithJsx from "./components/jsx/WithJsx";
@@ -17,7 +16,6 @@ import { EventContact } from "./components/event-handling/EventContact";
 import { Counter } from "./components/state-management/Counter";
 import { StateCounter } from "./components/state-management/StateCounter";
 import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
-import AddContacts from "./components/redux/phone-book/add-contacts";
 import UseStateExample from "./components/hooks/StateManagement/UseStateExample";
 import UseReducerExample from "./components/hooks/StateManagement/UseReducerExample";
 import UseRefExample from "./components/hooks/UseRef/UseRefExample";
@@ -34,7 +32,6 @@ import TablesListUsers from "./components/state-management/features/TablesListUs
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
 import ApiTable from "./components/api/ApiTable";
-import ReduxCounter from "./components/redux/features/counterSlice";
 import ListProductsFilter from "./components/api/ListProductsFilter";
 import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
@@ -78,7 +75,6 @@ export default function App() {
   );
 
   return (
-    <Provider store={store}>
       <div className="app-layout">
         {/* SIDEBAR */}
         <aside className="sidebar">
@@ -327,7 +323,7 @@ export default function App() {
                     <Code size={16} /> Redux
                   </button>
 
-                  {reduxOpen && (
+                  {/* {reduxOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
                       <Link to="/advanced/redux">
                         <Hash size={14} /> Phone Book
@@ -336,7 +332,7 @@ export default function App() {
                         <Hash size={14} /> Counter
                       </Link>
                     </div>
-                  )}
+                  )} */}
                 </div>
                 <hr />
                 <Link to="/functional-component">← Back to Basics</Link>
@@ -454,8 +450,8 @@ export default function App() {
               />
 
             {/* REDUX ROUTES */}
-            <Route path="/advanced/redux" element={<AddContacts />} />
-            <Route path="/advanced/redux/counter" element={<ReduxCounter />} />
+            {/* <Route path="/advanced/redux" element={<AddContacts />} />
+            <Route path="/advanced/redux/counter" element={<ReduxCounter />} /> */}
 
             {/* ADVANCED ROUTES */}
             <Route
@@ -476,6 +472,5 @@ export default function App() {
           </Routes>
         </main>
       </div>
-    </Provider>
   );
 }
