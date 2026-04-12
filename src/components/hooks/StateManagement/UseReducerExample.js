@@ -1,40 +1,13 @@
 import {useReducer} from "react";
 
-function Counter() {
-  // const [count, setCount] = useState(0);
-  
-  // const handleIncrement = () => {
-  //   setCount(count + 1)
-  // }
-  
-  // const handleDecrement = () => {
-  //   if (count > 0) {
-  //      setCount(count-1)
-  //    }
-  // }
-  
-  //  const handleReset = () => {
-  //   setCount(0)
-  // }
-
-  // const [state, dispatch] = useReducer(reducer, initalState);
+function Counter() {  
 
   const initialState = {
     count: 0
   }
+  
   const reducer = (state, action) => {
     console.log(state, action)
-
-      // if (action.type === "INCREMENT") {
-      //   return state + 1
-      // }
-      // if (action.type === "DECREMENT") {
-      //   return state - 1
-      // }
-      // if (action.type === "RESET") {
-      //   return state = 0
-    // }
-    
     switch(action.type) {
       case "INCREMENT":
         return {count: state.count + 1 }
