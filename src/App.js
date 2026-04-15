@@ -1,6 +1,5 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
-import  store  from "./store.jsx";
 import FunctionalComponent from "./components/function-class/FuncationalComponment";
 import Welcome from "./components/function-class/ClassComponent";
 import WithJsx from "./components/jsx/WithJsx";
@@ -26,7 +25,6 @@ import {ReactMemo} from "./components/hooks/Memoization/ReactMemo/ReactMemo";
 import UseCallbackExample from "./components/hooks/Memoization/UseCallbackMemo/UseCallbackExample";
 import UseContext from "./components/hooks/Context/UseContext";
 import Calculator from "./components/state-management/features/Calculator";
-import ToDoList from "./components/state-management/features/ToDoList";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
 import ControlledComponent from "./components/forms/ControlledComponent";
@@ -41,6 +39,7 @@ import DashboardCard from "./components/Children/DashboardCard";
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
+import { TODO } from "./components/redux/TODO";
 
 // Lazy load the MarvelProducts component
 const MarvelProducts = lazy(() =>
@@ -158,9 +157,6 @@ export default function App() {
                       </Link>
                       <Link to="/state/calculator">
                         <Hash size={14} /> Calculator
-                      </Link>
-                      <Link to="/state/todo">
-                        <Hash size={14} /> ToDo List
                       </Link>
                       <Link to="/state/tabs">
                         <Hash size={14} /> Tab Selection
@@ -323,16 +319,13 @@ export default function App() {
                     <Code size={16} /> Redux
                   </button>
 
-                  {/* {reduxOpen && (
+                  {reduxOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
-                      <Link to="/advanced/redux">
-                        <Hash size={14} /> Phone Book
-                      </Link>
-                      <Link to="/advanced/redux/counter">
-                        <Hash size={14} /> Counter
+                      <Link to="/advanced/redux/ToDo">
+                        <Hash size={14} /> ToDo App
                       </Link>
                     </div>
-                  )} */}
+                  )}
                 </div>
                 <hr />
                 <Link to="/functional-component">← Back to Basics</Link>
@@ -398,7 +391,6 @@ export default function App() {
             <Route path="/counter" element={<Counter />} />
             <Route path="/state" element={<StateCounter />} />
             <Route path="/state/calculator" element={<Calculator />} />
-            <Route path="/state/todo" element={<ToDoList />} />
             <Route path="/state/tabs" element={<TabSelection />} />
             <Route path="/state/users" element={<TablesListUsers />} />
           
@@ -450,8 +442,8 @@ export default function App() {
               />
 
             {/* REDUX ROUTES */}
-            {/* <Route path="/advanced/redux" element={<AddContacts />} />
-            <Route path="/advanced/redux/counter" element={<ReduxCounter />} /> */}
+             <Route path="/advanced/redux/ToDo" element={<TODO />} />
+           {/* <Route path="/advanced/redux/counter" element={<ReduxCounter />} /> */}
 
             {/* ADVANCED ROUTES */}
             <Route
