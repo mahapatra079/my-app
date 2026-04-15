@@ -21,12 +21,20 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model("Product", productSchema);
 
 // API Route
+app.get("/", (req, res) => {
+  res.json({ message: "API Server Running", endpoints: ["/api/products"] });
+});
+
 app.get("/api/products", async (req, res) => {
   const data = await Product.find();
   res.json(data);
 });
 
 // Start server
-app.listen(5000, () => {
+// app.listen(5000, () => {
+//   console.log("Server running on port 5000");
+// });
+
+app.listen(5000, '0.0.0.0', () => {
   console.log("Server running on port 5000");
 });
