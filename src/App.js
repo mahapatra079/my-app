@@ -35,13 +35,15 @@ import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
 import DashboardCard from "./components/Children/DashboardCard";
+import { Destructuring } from "./components/destructuring/Destructuring"
 
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
 import { TODO } from "./components/redux/TODO";
 
-// Lazy load the MarvelProducts component
+// Lazy load t
+//he MarvelProducts component
 const MarvelProducts = lazy(() =>
   import("./components/resuable-logic/custom-hook/MarvelProducts").then(
     (module) => ({ default: module.MarvelProducts })
@@ -88,6 +90,9 @@ export default function App() {
                 </Link>
                 <Link to="/class-component">
                   <Component size={16} /> Class Component
+                </Link>
+                 <Link to="/destructuring">
+                  <Component size={16} /> Destructuring
                 </Link>
                 <hr />
                 <div className="jsx-dropdown">
@@ -360,6 +365,7 @@ export default function App() {
               element={<FunctionalComponent name="This is called Functional Component" />}
             />
             <Route path="/class-component" element={<Welcome />} />
+            <Route path="/destructuring" element={<Destructuring />} />
             <Route path="/jsx-version" element={<WithJsx />} />
             <Route path="/without-jsx" element={<WithoutJsx />} />
             <Route path="/fragment" element={<Fragment />} />
