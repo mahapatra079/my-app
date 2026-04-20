@@ -34,7 +34,10 @@ import ListProductsFilter from "./components/api/ListProductsFilter";
 import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
-import {FormValidationCheck} from "./components/form-validation-checks/FormValidationCheck";
+import { FormValidationCheck } from "./components/form-validation-checks/FormValidationCheck";
+import { DropdownValidationCheck } from "./components/forms-validation-dropdown/DropdownValidationCheck";
+import { FormValidate } from "./components/form-validate/FormValidate";
+
 import DashboardCard from "./components/Children/DashboardCard";
 import { Destructuring } from "./components/destructuring/Destructuring"
 
@@ -201,10 +204,16 @@ export default function App() {
                         <Hash size={14} /> Uncontrolled
                       </Link>
                       <Link to="/form-validation">
-                        <Hash size={14} /> Form Validation
+                        <Hash size={14} /> Form Required
                       </Link>
                       <Link to="/form-validation-check">
                         <Hash size={14} /> Form Validation Checks
+                      </Link>
+                      <Link to="/form-validation-dropdown">
+                        <Hash size={14} /> Dropdown Validate
+                      </Link>
+                      <Link to="/validation-check">
+                        <Hash size={14} /> Validate Fields
                       </Link>
                     </div>
                   )}
@@ -412,6 +421,8 @@ export default function App() {
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
             <Route path="/form-validation" element={<FormValidation />} />
             <Route path="/form-validation-check" element={<FormValidationCheck />} />
+            <Route path="/form-validation-dropdown" element={<DropdownValidationCheck />} />
+            <Route path="/validation-check" element={<FormValidate />} />
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />

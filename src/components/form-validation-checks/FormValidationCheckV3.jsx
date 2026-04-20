@@ -2,81 +2,82 @@ import { useState } from "react";
 
 export const FormValidationCheckV3 = () => {
 
-  // Single state for form data and errors
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: ""
-  });
-
-  // Separate state for errors
-  const [errors, setErrors] = useState({
-    name: "",
-    mobile: "",
-    email: ""
-  });
-
-  // State for submitted data to display after successful submission
-  const [submittedData, setSubmittedData] = useState(null);
+  const [formData, setFormData] = useState(
+    {
+      name: "",
+      mobile: "",
+      email: ""
+    }
+  );
 
 
-  // onChange handler for all fields
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: validateName(value) }));
+  const [errors, setErrors] = useState(
+    {
+      name: "",
+      mobile: "",
+      email: ""
+    }
+  );
+
+  // to display submitted data below the form
+  const [submittedData, setSubmittedData] = useState(null); 
+
+  //  Validation map — field name → validator 
+  const validators = {
+    name: validateName, // points to the validateName function
+    mobile: validateMobile,
+    email: validateEmail,
   };
 
+  //  Single onChange — picks the right validator by field name
+  const handleChange = (e) => {
+    const { name, value } = e.target;// name is the field name (e.g. "name", "mobile", "email")
+    setFormData(prev => ({ ...prev, [name]: value }));// update form data
+    setErrors(prev => ({ ...prev, [name]: validators[name](value) })); // validate on change for instant feedback
+  };
 
-  //Validation Functions (PURE)
-  const validateName = (value) => {
+  // Pure validation functions
+
+  function validateName(value) {
     if (value.trim() === "") return "Name is required";
     if (value.length < 3) return "Minimum 3 characters";
     if (!/^[A-Za-z ]+$/.test(value)) return "Only alphabets allowed";
     return "";
-  };
+  }
 
-  const validateMobile = (value) => {
+  function validateMobile(value) {
     if (value.trim() === "") return "Mobile number is required";
+    if (!/^\d+$/.test(value)) return "Only digits allowed";
     if (value.length < 10) return "Minimum 10 digits";
     if (value.length > 15) return "Maximum 15 digits";
-    if (!/^\d+$/.test(value)) return "Only digits allowed";
     return "";
-  };
+  }
 
-  const validateEmail = (value) => {
+  function validateEmail(value) {
     if (value.trim() === "") return "Email is required";
     if (value.length < 6) return "Minimum 6 characters";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Enter a valid email";
     return "";
-  };
+  }
 
-
-  // Submit
+  // Submit 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const nameErr = validateName(formData.name);
-    const mobileErr = validateMobile(formData.mobile);
-    const emailErr = validateEmail(formData.email);
-
+    // Run all validations together so all errors show at once
     const newErrors = {
-      name: nameErr,
-      mobile: mobileErr,
-      email: emailErr
+      name: validateName(formData.name),
+      mobile: validateMobile(formData.mobile),
+      email: validateEmail(formData.email),
     };
 
-    setErrors(newErrors);
-
-    if (nameErr || mobileErr || emailErr) return;
-
-    const data = { name: formData.name, mobile: formData.mobile, email: formData.email };
-    setSubmittedData(data);
+      setErrors(newErrors);
+      setSubmittedData({ ...formData });
   };
 
   return (
     <div className="card">
-      <h2 className="font-bold text-lg mb-5">Form Validation (Optimize Version)</h2>
+      <h2 className="font-bold text-lg mb-5">Form Validation (Optimized V3)</h2>
 
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-3 gap-4">
@@ -85,6 +86,7 @@ export const FormValidationCheckV3 = () => {
           <div>
             <input
               type="text"
+              name="name"              
               placeholder="Enter Name"
               value={formData.name}
               onChange={handleChange}
@@ -97,6 +99,7 @@ export const FormValidationCheckV3 = () => {
           <div>
             <input
               type="text"
+              name="mobile"             
               placeholder="Enter Mobile"
               value={formData.mobile}
               onChange={handleChange}
@@ -109,6 +112,7 @@ export const FormValidationCheckV3 = () => {
           <div>
             <input
               type="email"
+              name="email"            
               placeholder="Enter Email"
               value={formData.email}
               onChange={handleChange}
@@ -122,20 +126,14 @@ export const FormValidationCheckV3 = () => {
         <button
           className="addBtn"
           type="submit"
-          disabled={
-            !formData.name ||
-            !formData.mobile ||
-            !formData.email ||
-            errors.name ||
-            errors.mobile ||
-            errors.email
+          disabled={!formData.name || !formData.mobile || !formData.email ||
+            !!errors.name || !!errors.mobile || !!errors.email  
           }
         >
           Submit
         </button>
       </form>
 
-      {/* Output */}
       {submittedData && (
         <div>
           <h3>Submitted Data:</h3>
