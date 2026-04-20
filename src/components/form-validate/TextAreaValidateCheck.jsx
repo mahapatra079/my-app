@@ -36,9 +36,9 @@ export const TextAreaValidation = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="card">
 
-      <h2 className="font-bold mb-5">Textarea Validation</h2>
+      <h2 className="font-bold text-lg mb-5">Textarea Validation</h2>
 
       <textarea
         rows="4"

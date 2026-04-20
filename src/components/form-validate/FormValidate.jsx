@@ -4,11 +4,12 @@ import { TextAreaValidation } from "./TextAreaValidateCheck";
 
 
 export const FormValidate = () => {
-    return (
+  return (
         <div className="card">
-             <RadioValidate />
-            <CheckBoxValidate />    
-            <TextAreaValidation />
-        </div>
+           <h2 className="font-bold text-lg mb-5">Validation Check</h2>
+            <RadioValidate />
+          <CheckBoxValidate />    
+          <TextAreaValidation />
+      </div>
     );
 }
