@@ -36,7 +36,7 @@ function FormValidation() {
     return (
         <>
             <div className="card">
-                <h1 className="font-bold text-xl">Form Validation</h1>
+                <h1 className="font-bold text-xl">Basic Form Validation</h1>
                 <form className="card" onSubmit={handleSubmit}>
                  <h2 className="font-bold text-xl">Form Validation - Controlled Components (State Mangement)</h2>
                     <div className="grid grid-cols-3 gap-4 mt-4">
@@ -68,20 +68,5 @@ function FormValidation() {
 }
 
 export default FormValidation;
-
-// Can we use useRef instead of useState?
-
-// Yes, we can use useRef for uncontrolled components, but for forms that require validation,
-// UI updates, or dynamic feedback, useState is preferred because it keeps the UI in sync with the data.
-
-// Problem with useRef for form handling:
-  // My  current form has:
-
-    // Live value display (Name: {form.name})
-    // Validation messages
-    // Disabled button logic
-    // These features rely on state updates to trigger re-renders, which useRef does not provide.
- 
-// With useRef, you lose all of this easily
 
    

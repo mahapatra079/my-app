@@ -34,6 +34,7 @@ import ListProductsFilter from "./components/api/ListProductsFilter";
 import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
 import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
+import {FormValidationCheck} from "./components/form-validation-checks/FormValidationCheck";
 import DashboardCard from "./components/Children/DashboardCard";
 import { Destructuring } from "./components/destructuring/Destructuring"
 
@@ -201,6 +202,9 @@ export default function App() {
                       </Link>
                       <Link to="/form-validation">
                         <Hash size={14} /> Form Validation
+                      </Link>
+                      <Link to="/form-validation-check">
+                        <Hash size={14} /> Form Validation Checks
                       </Link>
                     </div>
                   )}
@@ -407,6 +411,7 @@ export default function App() {
             <Route path="/controlled" element={<ControlledComponent />} />
             <Route path="/uncontrolled" element={<UncontrolledComponent />} />
             <Route path="/form-validation" element={<FormValidation />} />
+            <Route path="/form-validation-check" element={<FormValidationCheck />} />
 
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
