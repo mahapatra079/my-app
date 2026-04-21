@@ -1,6 +1,7 @@
 import { CheckBoxValidate } from "./CheckBoxValidate";
 import { RadioValidate } from "./ReadioValidate";
 import { TextAreaValidation } from "./TextAreaValidateCheck";
+import { ToggleSwitchValidate } from "./ToggleSwitchValidate";
 
 
 export const FormValidate = () => {
@@ -10,6 +11,7 @@ export const FormValidate = () => {
             <RadioValidate />
           <CheckBoxValidate />    
           <TextAreaValidation />
+          <ToggleSwitchValidate />
       </div>
     );
 }
