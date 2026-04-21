@@ -13,3 +13,13 @@ export const FormValidate = () => {
       </div>
     );
 }
+
+// Form elements in React are used to collect user input like login or search. 
+// They can be controlled using React state (controlled components) or by using refs (uncontrolled components)
+
+// Key Form Elements in React
+// <input />
+// <textarea />
+// <select />
+// <button />
+// <form />

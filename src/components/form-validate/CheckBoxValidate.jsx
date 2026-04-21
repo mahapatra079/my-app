@@ -48,7 +48,9 @@ export const CheckBoxValidate = () => {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <button type="submit" disabled={!terms} className="addBtn">
+      <button type="submit"
+        // disabled={!terms}
+        className="addBtn">
         Submit
       </button>
 

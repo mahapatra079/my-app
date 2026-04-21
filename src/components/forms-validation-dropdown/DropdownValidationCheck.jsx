@@ -72,7 +72,9 @@ export const DropdownValidationCheck = () => {
           <p className="text-red-600">{errors.country}</p>
         )}
 
-        <button type="submit" disabled={!formData.country || errors.country} className="addBtn mt-4">
+        <button type="submit"
+          // disabled={!formData.country || errors.country}
+          className="addBtn mt-4">
           Submit
         </button>
 

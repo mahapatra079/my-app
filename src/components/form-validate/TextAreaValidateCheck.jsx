@@ -51,7 +51,13 @@ export const TextAreaValidation = () => {
       {/* Error */}
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <p className="font-medium mb-5">{message.length}/200</p>
+      <p className="font-medium mt-5 mb-5">
+        Characters: {message.length}/200
+      </p>
+
+      <p className=" font-medium text-sm text-gray-500">
+        {200 - message.length} characters left
+      </p>
 
       <button type="submit" className="addBtn" disabled={!message || error}>
         Submit
