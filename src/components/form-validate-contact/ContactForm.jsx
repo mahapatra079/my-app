@@ -22,6 +22,8 @@ export const ContactForm = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const [loader, setLoader] = useState(false);
+
   // Handle input change
   const handleForm = (e) => {
     const { name, value } = e.target;
@@ -61,6 +63,13 @@ export const ContactForm = () => {
         if (!validate()) return;
         
         setSubmitted(true);
+        setLoader(true);
+
+        // Simulate API call
+        setTimeout(() => {
+          setLoader(false);
+          alert("Form submitted successfully!");
+        }, 2000);
   };
 
     
@@ -161,6 +170,10 @@ export const ContactForm = () => {
             Phone: {form.countryCode} {form.phone}
           </li>
         </ul>
+      )}
+
+      {loader && (
+        <div className="loader mt-4">Submitting...</div>
       )}
     </form>
   );
