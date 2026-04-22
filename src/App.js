@@ -37,7 +37,7 @@ import FormValidation from "./components/forms/FormsValidation";
 import { FormValidationCheck } from "./components/form-validation-checks/FormValidationCheck";
 import { DropdownValidationCheck } from "./components/forms-validation-dropdown/DropdownValidationCheck";
 import { FormValidate } from "./components/form-validate/FormValidate";
-
+import {ContactForm} from "./components/form-validate-contact/ContactForm";
 import DashboardCard from "./components/Children/DashboardCard";
 import { Destructuring } from "./components/destructuring/Destructuring"
 
@@ -215,6 +215,9 @@ export default function App() {
                       <Link to="/validation-check">
                         <Hash size={14} /> Validate Fields
                       </Link>
+                      <Link to="/form-validation-contact">
+                        <Hash size={14} /> Contact Form
+                      </Link>                       
                     </div>
                   )}
                 </div>
@@ -423,7 +426,8 @@ export default function App() {
             <Route path="/form-validation-check" element={<FormValidationCheck />} />
             <Route path="/form-validation-dropdown" element={<DropdownValidationCheck />} />
             <Route path="/validation-check" element={<FormValidate />} />
-
+            <Route path="/form-validation-contact" element={<ContactForm />} />
+          
             {/* HOOKS ROUTES */}
             <Route path="/advanced/hooks/useState" element={<UseStateExample />} />
             <Route path="/advanced/hooks/useRef" element={<UseRefExample />} />
