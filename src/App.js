@@ -40,6 +40,7 @@ import { FormValidate } from "./components/form-validate/FormValidate";
 import {ContactForm} from "./components/form-validate-contact/ContactForm";
 import DashboardCard from "./components/Children/DashboardCard";
 import { Destructuring } from "./components/destructuring/Destructuring"
+import {GETApiFiltering} from "./components/api/axios-api/CRUD/GETApiFiltering";
 
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
@@ -303,7 +304,10 @@ export default function App() {
                       </Link>
                       <Link to="/advanced/api/comments">
                         <Hash size={14} /> ApiTable
-                      </Link>
+                    </Link>
+                    <Link to="/advanced/api/CRUD-FLOW">
+                      <Hash size={14} /> User API Filtering
+                    </Link>
                     </div>
                   )}
                 </div>
@@ -446,8 +450,8 @@ export default function App() {
               path="/advanced/api/list-products"
               element={<ListProductsFilter />}
             />
-            <Route path="/advanced/api/comments" element={<ApiTable />} />
-
+          <Route path="/advanced/api/comments" element={<ApiTable />} />
+          <Route path="/advanced/api/CRUD-FLow" element={<GETApiFiltering />} />
             {/* Reusable Logic Routes */}
              <Route path="/advanced/hoc" element={<HOC />} />
             {/* <Route path="/advanced/custom-hooks/marvel-products" element={<MarvelProducts />} /> */}
