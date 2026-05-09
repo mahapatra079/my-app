@@ -41,7 +41,7 @@ import {ContactForm} from "./components/form-validate-contact/ContactForm";
 import DashboardCard from "./components/Children/DashboardCard";
 import { Destructuring } from "./components/destructuring/Destructuring"
 import {GETApiFiltering} from "./components/api/axios-api/CRUD/GETApiFiltering";
-
+import {JWT} from "./components/jwt-token/JWT";
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
 import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
@@ -120,6 +120,7 @@ export default function App() {
 
                 <hr />
                   <Link to="/auth/Dashboard"><Hash size={16} /> Auth Page (Conidtional Rendering)</Link>
+                  <Link to="/jwt"><Hash size={16} /> JWT Auth Demo</Link>
                   <Link to ="/rendering-list"><Hash size={14} />List Rendering</Link>
                   <Link to ="/children"><Hash size={16} /> Children </Link>
                   <Link to="/props"><Hash size={16} /> Props </Link>
@@ -412,6 +413,7 @@ export default function App() {
               element={<EventHandlerProps text="Hit" />}
             />
             <Route path="/event-contact" element={<EventContact />} />
+            <Route path="/jwt" element={<JWT />} />
             
             {/* STATE MANAGEMENT ROUTES */}
             <Route path="/counter" element={<Counter />} />
