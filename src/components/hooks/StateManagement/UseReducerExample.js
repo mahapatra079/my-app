@@ -12,7 +12,11 @@ function Counter() {
       case "INCREMENT":
         return {count: state.count + 1 }
       case "DECREMENT":
-        return {count: state.count - 1 }
+        return { count: state.count - 1 }
+       // return state.count === 0 ? state : { count: state.count - 1 }; // guard in the DECREMENT case to prevent going below 0:
+      // return { count: Math.max(0, state.count - 1) }; //it returns the existing state unchanged — so the count stays at 0
+      //Math.max is slightly more readable.
+      
       case "RESET":
         return {count: 0}
       default:
