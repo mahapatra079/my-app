@@ -23,3 +23,6 @@ for (let num of arr) {
 }
 
 console.log(first, second, third);
+
+// -Infinity is used as an initial value when finding the largest number because any real number will be greater than it.
+// Infinity is used when finding the smallest number because any real number will be smaller than it.
