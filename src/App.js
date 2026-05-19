@@ -24,6 +24,7 @@ import {UseMemoExample} from "./components/hooks/Memoization/Memo/UseMemoExample
 import {ReactMemo} from "./components/hooks/Memoization/ReactMemo/ReactMemo";
 import UseCallbackExample from "./components/hooks/Memoization/UseCallbackMemo/UseCallbackExample";
 import UseContext from "./components/hooks/Context/UseContext";
+import ParentLiftedState from "./components/LiftedState/ParentLiftedState";
 import Calculator from "./components/state-management/features/Calculator";
 import TabSelection from "./components/state-management/features/TabSelection";
 import TablesListUsers from "./components/state-management/features/TablesListUsers";
@@ -174,6 +175,9 @@ export default function App() {
                       </Link>
                       <Link to="/state/users">
                         <Hash size={14} /> Users Table
+                      </Link>
+                      <Link to="/state/lifted-state">
+                        <Hash size={14} /> Lifted State
                       </Link>
                     </div>
                   )}
@@ -421,6 +425,7 @@ export default function App() {
             <Route path="/state/calculator" element={<Calculator />} />
             <Route path="/state/tabs" element={<TabSelection />} />
             <Route path="/state/users" element={<TablesListUsers />} />
+            <Route path="/state/lifted-state" element={<ParentLiftedState />} />
           
             <Route path="/life-cycle" element={<LifeCycle />} />
             <Route path="/hoc" element={<HOC />} />  
