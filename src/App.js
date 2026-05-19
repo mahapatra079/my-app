@@ -1,5 +1,7 @@
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
+
+// BASIC COMPONENTS
 import FunctionalComponent from "./components/function-class/FuncationalComponment";
 import Welcome from "./components/function-class/ClassComponent";
 import WithJsx from "./components/jsx/WithJsx";
@@ -8,53 +10,79 @@ import Fragment from "./components/jsx/Fragment";
 import AuthPage from "./components/conditional-rendering/AuthPage";
 import { ListRenderingListItem } from "./components/rendering-list/ListRenderingListItem";
 import Child from "./components/props/Child";
+import { Destructuring } from "./components/destructuring/Destructuring";
+import DashboardCard from "./components/Children/DashboardCard";
+
+// EVENT HANDLING
 import ClickEvent from "./components/event-handling/ClickEvent";
 import EventObjects from "./components/event-handling/EventObjects";
 import EventHandlerProps from "./components/event-handling/EventHandlerProps";
 import { EventContact } from "./components/event-handling/EventContact";
-import { Counter } from "./components/state-management/Counter";
-import { StateCounter } from "./components/state-management/StateCounter";
+
+// STATE MANAGEMENT
+import { Counter } from "./components/state-management-examples/Counter";
+import { StateCounter } from "./components/state-management-examples/StateCounter";
+// import AddingSum from "./components/state-management-examples/AddingSum";
+// import CaptureInputData from "./components/state-management-examples/CaptureInputData";
+// import ToggleSwitch from "./components/state-management-examples/ToggleSwitch";
+import ParentLiftedState from "./components/State-Management/LiftedState/ParentLiftedState";
+import Calculator from "./components/state-management-examples/features/Calculator";
+import TabSelection from "./components/state-management-examples/features/TabSelection";
+import TablesListUsers from "./components/state-management-examples/features/TablesListUsers";
+
+// LIFECYCLE & HOOKS
 import { LifeCycle } from "./components/lifeCycle-methods/LifeCycle";
 import UseStateExample from "./components/hooks/StateManagement/UseStateExample";
 import UseReducerExample from "./components/hooks/StateManagement/UseReducerExample";
 import UseRefExample from "./components/hooks/UseRef/UseRefExample";
 import UseEffectExample from "./components/hooks/SideEffects/UseEffectExample";
 import { UseLayoutEffectExample } from "./components/hooks/SideEffects/UseLayoutEffectExample";
-import {UseMemoExample} from "./components/hooks/Memoization/Memo/UseMemoExample";
-import {ReactMemo} from "./components/hooks/Memoization/ReactMemo/ReactMemo";
+import { UseMemoExample } from "./components/hooks/Memoization/Memo/UseMemoExample";
+import { ReactMemo } from "./components/hooks/Memoization/ReactMemo/ReactMemo";
 import UseCallbackExample from "./components/hooks/Memoization/UseCallbackMemo/UseCallbackExample";
 import UseContext from "./components/hooks/Context/UseContext";
-import ParentLiftedState from "./components/LiftedState/ParentLiftedState";
-import Calculator from "./components/state-management/features/Calculator";
-import TabSelection from "./components/state-management/features/TabSelection";
-import TablesListUsers from "./components/state-management/features/TablesListUsers";
+
+// FORMS
 import ControlledComponent from "./components/forms/ControlledComponent";
 import UncontrolledComponent from "./components/forms/UncontrolledComponent";
-import ApiTable from "./components/api/ApiTable";
-import ListProductsFilter from "./components/api/ListProductsFilter";
-import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
-import HOC from "./components/resuable-logic/HOC/HOC";
 import FormValidation from "./components/forms/FormsValidation";
 import { FormValidationCheck } from "./components/form-validation-checks/FormValidationCheck";
 import { DropdownValidationCheck } from "./components/forms-validation-dropdown/DropdownValidationCheck";
 import { FormValidate } from "./components/form-validate/FormValidate";
-import {ContactForm} from "./components/form-validate-contact/ContactForm";
-import DashboardCard from "./components/Children/DashboardCard";
-import { Destructuring } from "./components/destructuring/Destructuring"
-import {GETApiFiltering} from "./components/api/axios-api/CRUD/GETApiFiltering";
-import {JWT} from "./components/jwt-token/JWT";
+import { ContactForm } from "./components/form-validate-contact/ContactForm";
+
+// API & AUTHENTICATION
+import ApiTable from "./components/api/ApiTable";
+import ListProductsFilter from "./components/api/ListProductsFilter";
+import FetchingApi from "./components/api/Fetching-Api/FetchingApi";
+import { GETApiFiltering } from "./components/api/axios-api/CRUD/GETApiFiltering";
+import { JWT } from "./components/jwt-token/JWT";
+
+// REUSABLE LOGIC
+import HOC from "./components/resuable-logic/HOC/HOC";
 // import { MarvelProducts } from "./components/resuable-logic/custom-hook/MarvelProducts";
 
-import { Component, Code, FileText, MousePointer, Hash, Calculator as CalcIcon, Atom, LifeBuoy, ChevronDown, ChevronRight, } from "lucide-react";
+// REDUX
 import { TODO } from "./components/redux/TODO";
 
-// Lazy load t
-//he MarvelProducts component
+// ICONS
+import {
+  Component,
+  Code,
+  FileText,
+  MousePointer,
+  Hash,
+  Calculator as CalcIcon,
+  Atom,
+  LifeBuoy,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
+
+// Lazy load the MarvelProducts component
 const MarvelProducts = lazy(() =>
   import("./components/resuable-logic/custom-hook/MarvelProducts").then(
     (module) => ({ default: module.MarvelProducts })
-    // If MarvelProducts is the default export, use:
-    // (module) => ({ default: module.default })
   )
 );
 console.log("MarvelProducts component loaded", MarvelProducts);
