@@ -67,7 +67,8 @@ export default function App() {
     location.pathname.startsWith("/hooks");
   
   const [hooksOpen, setHooksOpen] = useState(false);
-  const [stateOpen, setStateOpen] = useState(false);
+  const [stateManagementOpen, setStateManagementOpen] = useState(false);
+  const [stateExamplesOpen, setStateExamplesOpen] = useState(false);
   const [reduxOpen, setReduxOpen] = useState(false);
   const [apiOpen, setApiOpen] = useState(false);
   const [formsOpen, setFormsOpen] = useState(false);
@@ -148,10 +149,10 @@ export default function App() {
 
                 <div className="state-management">
                   <button
-                    onClick={() => setStateOpen(!stateOpen)}
+                    onClick={() => setStateManagementOpen(!stateManagementOpen)}
                     className="dropdown-btn"
                   >
-                    {stateOpen ? (
+                    {stateManagementOpen ? (
                       <ChevronDown size={16} />
                     ) : (
                       <ChevronRight size={16} />
@@ -159,10 +160,32 @@ export default function App() {
                     <CalcIcon size={16} /> State Management
                   </button>
 
-                  {stateOpen && (
+                  {stateManagementOpen && (
+                    <div style={{ marginLeft: "20px", marginTop: "5px" }}>
+                      <Link to="/state/lifted-state">
+                        <Hash size={14} /> Lifted State
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <div className="state-examples">
+                  <button
+                    onClick={() => setStateExamplesOpen(!stateExamplesOpen)}
+                    className="dropdown-btn"
+                  >
+                    {stateExamplesOpen ? (
+                      <ChevronDown size={16} />
+                    ) : (
+                      <ChevronRight size={16} />
+                    )}
+                    <CalcIcon size={16} /> State Examples
+                  </button>
+
+                  {stateExamplesOpen && (
                     <div style={{ marginLeft: "20px", marginTop: "5px" }}>
                       <Link to="/counter">
-                        <CalcIcon size={16} /> Counter
+                        <Hash size={14} /> Counter
                       </Link>
                       <Link to="/state">
                         <Hash size={14} /> State Examples
@@ -175,9 +198,6 @@ export default function App() {
                       </Link>
                       <Link to="/state/users">
                         <Hash size={14} /> Users Table
-                      </Link>
-                      <Link to="/state/lifted-state">
-                        <Hash size={14} /> Lifted State
                       </Link>
                     </div>
                   )}
