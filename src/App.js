@@ -9,7 +9,7 @@ import { WithoutJsx } from "./components/jsx/WithoutJsx";
 import Fragment from "./components/jsx/Fragment";
 import AuthPage from "./components/conditional-rendering/AuthPage";
 import { ListRenderingListItem } from "./components/rendering-list/ListRenderingListItem";
-import Child from "./components/props/Child";
+import ChildDestructuring from "./components/props/Destructing/With Destructuring/ChildDestructuring";
 import { Destructuring } from "./components/destructuring/Destructuring";
 import DashboardCard from "./components/Children/DashboardCard";
 
@@ -450,7 +450,7 @@ export default function App() {
             <Route
               path="/props"
               element={
-                <Child
+                <ChildDestructuring
                   header="Props"
                   title="Parent Component"
                   subTitle="Child Component"
