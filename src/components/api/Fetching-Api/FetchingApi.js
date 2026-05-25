@@ -3,6 +3,7 @@ import ErrorFetchingApi from './ErrorFetchingApi';
 import FilteringAPI from './FilteringAPI';
 import DynamicFilteringAPI from './DynamicFilteringAPI';
 import ErrorFilteringLoadingApi from './ErrorFilteringLoadingApi';
+import DebuggingAPI from './DebuggingAPI';
 
 function FetchingApi() {
   const [users, setUsers] = useState([]); // State to hold fetched users
@@ -34,6 +35,7 @@ function FetchingApi() {
         <ErrorFetchingApi />
         <ErrorFilteringLoadingApi />
         <DynamicFilteringAPI />
+        <DebuggingAPI/>
       </div>
     </>
   );
