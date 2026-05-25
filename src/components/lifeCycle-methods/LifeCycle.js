@@ -23,10 +23,21 @@ export const LifeCycle = () => {
     
     // Unmounting
     useEffect(() => {
+        // logic for mounting or updating can be here
         return () => {
             console.log('useEffect called unmounting');
         };
     }, []);  
+
+    // cleanup function example: setInterval and clearInterval
+    useEffect(() => {
+        const timer = setInterval(() => {
+            console.log("Interval running");
+        }, 1000);
+
+        // CLEANUP FUNCTION: Clears the interval when component dies
+        return () => clearInterval(timer); 
+        }, []);
 
     return( 
         <div className="card">
