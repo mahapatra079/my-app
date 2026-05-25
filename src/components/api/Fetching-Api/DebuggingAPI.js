@@ -11,7 +11,10 @@ function DebuggingAPI() {
   const [loading, setLoading] = useState(true)
   
   useEffect(()=> {
-    fetch("https://dummyjson.com/products")
+     const controller = new AbortController()
+        fetch("https://dummyjson.com/products", {
+         signal: controller.signal
+      })
     .then(res => {
       if(!res.ok){
          throw new Error("Invalid Url")  //stops here, jumps to .catch()
@@ -29,7 +32,10 @@ function DebuggingAPI() {
        console.log(err)   //"Invalid Url" lands here
        setError(err.message)
        setLoading(false)  // Ensure loading state is updated even on error
-     })
+    })
+      
+      return () => controller.abort()
+      
   },[])
   
   const handleSearch = (e)=>{
