@@ -48,4 +48,4 @@ export default Counter;
 
 // Performance
 //Inside → new function object allocated in memory on every render
-//Outside → created once, reused forever
+//Outside → created once, reused forever (reducer only takes (state, action) as arguments)
