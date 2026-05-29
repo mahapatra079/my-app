@@ -35,3 +35,8 @@ console.log(unique);
 // }
 
 // console.log(unique);
+
+// Built in Function to remove duplicates from an array
+// const arr = [1, 2, 3, 2, 4, 1, 5];
+// const unique = [...new Set(arr)];
+// console.log(unique); // Output: [1, 2, 3, 4, 5]
