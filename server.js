@@ -6,11 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect MongoDB
-mongoose.connect("mongodb://localhost:27017/marvelDB")
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
-
 // Schema
 const productSchema = new mongoose.Schema({
   title: String,
@@ -26,15 +21,26 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/products", async (req, res) => {
-  const data = await Product.find();
-  res.json(data);
+  try {
+    const data = await Product.find().lean();
+    res.json(data);
+  } catch (err) {
+    console.error("Failed to load products:", err);
+    res.status(500).json({ error: "Unable to load products" });
+  }
 });
 
-// Start server
-// app.listen(5000, () => {
-//   console.log("Server running on port 5000");
-// });
+const port = process.env.PORT || 5000;
 
-app.listen(5000, '0.0.0.0', () => {
-  console.log("Server running on port 5000");
-});
+// Connect before accepting requests so a page refresh cannot race the database connection.
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/marvelDB")
+  .then(() => {
+    console.log("MongoDB Connected");
+    app.listen(port, "0.0.0.0", () => {
+      console.log(`Server running on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection failed:", err);
+    process.exitCode = 1;
+  });

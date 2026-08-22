@@ -14,6 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### Marvel products API
+
+Start MongoDB, then run `npm run server` in a second terminal before opening or refreshing the Marvel products page. The API runs at `http://localhost:5000`.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
