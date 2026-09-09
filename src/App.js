@@ -64,6 +64,8 @@ import HOC from "./components/resuable-logic/HOC/HOC";
 
 // REDUX
 import { TODO } from "./components/redux/TODO";
+import Authoring from "./components/authoringLayout/Authoring";
+import VendorPhoneDirectory from "./components/phoneDirectory/vendorPhoneDirectory";
 
 // ICONS
 import {
@@ -405,6 +407,12 @@ export default function App() {
                     </div>
                   )}
                 </div>
+                <Link to="/advanced/authoring">
+                  <FileText size={16} /> Authoring
+                </Link>
+                <Link to="/advanced/vendor-phone-directory">
+                  <FileText size={16} /> Vendor Phone Directory
+                </Link>
                 <hr />
                 <Link to="/functional-component">← Back to Basics</Link>
               </nav>
@@ -529,6 +537,13 @@ export default function App() {
             {/* REDUX ROUTES */}
              <Route path="/advanced/redux/ToDo" element={<TODO />} />
            {/* <Route path="/advanced/redux/counter" element={<ReduxCounter />} /> */}
+
+            {/* AUTHORING ROUTE */}
+            <Route path="/advanced/authoring" element={<Authoring />} />
+            <Route
+              path="/advanced/vendor-phone-directory"
+              element={<VendorPhoneDirectory />}
+            />
 
             {/* ADVANCED ROUTES */}
             <Route

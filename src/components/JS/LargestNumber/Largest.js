@@ -9,8 +9,7 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 
-console.log(largest);
-
+ 
 // ussing Sort method
 
     // const arr = [11,20,30,40,80,100];
