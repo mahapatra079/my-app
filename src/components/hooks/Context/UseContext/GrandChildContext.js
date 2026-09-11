@@ -9,7 +9,9 @@ function GrandChildContext() {
   return (
     <div className="border-2 border-blue-400 rounded-lg p-3 mt-2 bg-blue-50">
       <h3 className="font-bold text-blue-600">GrandChild - consumes context directly</h3>
-      <p className="text-sm text-gray-500 border-2 border-gray-300 p-2 mt-20">user: {user}</p>
+      {/* <p className="text-sm text-gray-500 border-2 border-gray-300 p-2 mt-20">user: {user}</p> */}
+      <p className="text-sm text-gray-500 border-2 border-gray-300 p-2 mt-20">{user.name}, {user.age}, {user.email}</p>
+
     </div>
   );
 }
