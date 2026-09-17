@@ -69,3 +69,7 @@ function LoginAPiButtonCall() {
 }
 
 export default LoginAPiButtonCall;
+
+// Conclusion
+// useEffect is generally used when the API call should happen based on the component lifecycle or a dependency change.
+// If I want the API to execute only after a user action such as clicking Login, I handle the API call inside the submit event handler.
