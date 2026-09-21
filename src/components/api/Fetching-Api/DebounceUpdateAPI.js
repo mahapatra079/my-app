@@ -1,4 +1,6 @@
-import React, {useState,useEffect} from 'react';
+// debouncing the filtering operation, not the API call.
+
+import { useState, useEffect } from 'react';
 
 function DebounceUpdateAPI () {
 
