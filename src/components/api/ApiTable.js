@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+// Fetch user data from this endpoint:
+// https://jsonplaceholder.typicode.com/users create table and Online/Offline status (simulated) using button
+ 
+
+import  { useState, useEffect } from "react";
 
 function ApiTable() {
   const [users, setUsers] = useState([]);
