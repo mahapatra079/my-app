@@ -51,8 +51,3 @@ export const MarvelProducts = () => {
 
 // I separated concerns by extracting API fetching logic into a custom hook (useProductList). 
 // This keeps my component clean and reusable. The component focuses only on UI, while the hook handles side effects and state management
-
-// filter
-// pagination
-// lazy loading
-// caching
