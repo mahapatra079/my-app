@@ -30,5 +30,3 @@ export const useProductList = () => {
   return { filteredProducts, search, setSearch }; // Return the products state from the custom hook
 };
 
-// caching - memory storage to store previously fetched data and return it when needed, instead of making a new API call every time.
-// This can improve performance and reduce unnecessary network requests.
