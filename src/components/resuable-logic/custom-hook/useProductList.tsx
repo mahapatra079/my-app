@@ -1,32 +1,40 @@
 import { useEffect, useState } from "react";
 
 export const useProductList = () => {
-  const [products, setProducts] = useState([]); // State to hold the list of products fetched from the API
-  console.log("useProductList called", products);
-
-  const [search, setSearch] = useState(""); // This should be a state variable that updates based on user input
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   // Filter products based on the search query
   const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase()),
+    (product.title || "").toLowerCase().includes(search.toLowerCase()),
   );
-  console.log("filteredProducts:", filteredProducts);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Products request failed: ${res.status}`);
+    const apiUrl = (process.env.REACT_APP_API_URL || "http://localhost:5000")
+      .replace(/\/+$/, "");
+
+    fetch(`${apiUrl}/api/products`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Products request failed: ${response.status}`);
         }
 
-        return res.json();
+        return response.json();
       })
-      .then((data) => setProducts(data))
-      .catch((err) => console.log("error fetching products:", err));
+      .then((data) => {
+        if (!Array.isArray(data)) {
+          throw new Error("Products response was not a list.");
+        }
+
+        setProducts(data);
+      })
+      .catch((fetchError) => {
+        setError(fetchError.message || "Unable to load products.");
+      })
+      .finally(() => setLoading(false));
   }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
-  console.log(products);
-  // return products; // Return the products state from the custom hook
-  return { filteredProducts, search, setSearch }; // Return the products state from the custom hook
+  return { filteredProducts, search, setSearch, loading, error };
 };
-

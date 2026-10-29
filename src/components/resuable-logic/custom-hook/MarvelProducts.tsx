@@ -1,26 +1,29 @@
 import { useProductList } from "./useProductList";
 
 export const MarvelProducts = () => {
-    // const products = useProductList(); // Custom hook to fetch product list
-      const { filteredProducts, search, setSearch } = useProductList(); // Custom hook to fetch product list and manage search state
-      console.log("marvel products rendered", filteredProducts);
+  const { filteredProducts, search, setSearch, loading, error } = useProductList();
   return (
     <>
       <div className="card max-w-6xl mx-auto">
         <div className="flex item-center justify-between">
-            <h1 className="font-bold text-2xl">Marvel Products</h1>
+            <h1 className="font-bold text-2xl">Marvel Characters</h1>
 
             {/* Filter  */}
             <input
               className="h-8 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="text"
-              placeholder="Search products..."
+              placeholder="Search Characters..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
          </div>
               
-        {/* Product List */}
+        {loading && <p role="status" className="p-4">Loading products...</p>}
+        {error && <p role="alert" className="p-4 text-red-600">{error}</p>}
+        {!loading && !error && filteredProducts.length === 0 && (
+          <p className="p-4">No products found.</p>
+        )}
+        {!loading && !error && filteredProducts.length > 0 && (
         <ul className="grid grid-cols-2 gap-4 p-4">
           {filteredProducts.map((product) => (
             <li
@@ -44,6 +47,7 @@ export const MarvelProducts = () => {
             </li>
           ))}
         </ul>
+        )}
       </div>
     </>
   );
